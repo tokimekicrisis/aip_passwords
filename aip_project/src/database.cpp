@@ -57,6 +57,35 @@ bool Database::InsertData(const char* site, const char* pw,
   return true;
 }
 
+bool Database::UpdateData(const char* id,
+                          const char* site, const char* pw,
+                          const char* cat, const char* cmt) {
+  sqlite3_stmt* stmt;
+  const char* query = "UPDATE TABLE"
+                      "SET SITE = :SITE, PASSWORD = :PASSWORD, "
+                      "CATEGORY = :CATEGORY, COMMENT = :COMMENT, ";
+  
+  if (sqlite3_prepare_v2(db_, query, -1, &stmt, nullptr) != SQLITE_OK) {
+    return false;
+  }
+
+  sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":SITE"), site, -1, SQLITE_TRANSIENT);
+  sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":PASSWORD"), pw, -1, SQLITE_TRANSIENT);
+  sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":CATEGORY"), cat, -1, SQLITE_TRANSIENT);
+  sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":COMMENT"), cmt, -1, SQLITE_TRANSIENT);
+
+    
+  int rc = sqlite3_step(stmt);
+  if (rc != SQLITE_DONE) {
+    std::cerr << "error: " << sqlite3_errmsg(db_) << std::endl;
+    return false;
+  } else {
+    std::cout << "data updated successfully" << std::endl;
+  }
+  sqlite3_finalize(stmt);
+  return true;
+}
+
 bool Database::DeleteData(const char* id) {
   sqlite3_stmt* stmt;
   const char* query = "DELETE FROM PASSWORDS WHERE ID = :ID;";

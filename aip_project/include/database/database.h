@@ -17,6 +17,10 @@ public:
                   const char* cat, const char* cmt);
 
   bool DeleteData(const char* id);
+
+  bool UpdateData(const char* id,
+                  const char* site, const char* pw,
+                  const char* cat, const char* cmt);
   
   std::vector<std::vector<std::string>> ExtractData(const char* search_term, 
                                                     const char* cat);
