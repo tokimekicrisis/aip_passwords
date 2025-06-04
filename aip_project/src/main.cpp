@@ -1,5 +1,10 @@
 #include "database/database.h"
 
+#include <QApplication>
+#include <QMainWindow>
+#include <QLabel>
+#include <QPushButton>
+
 #include <iostream>
 #include <string>
 
@@ -25,39 +30,47 @@ std::string GenPassword(const int len, const bool digits, const bool punct) {
   return pw;
 }
 
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
 
-int main() {
-  Database db("passwords.db");
-  std::cout << "db open\n";
+    QMainWindow window;
+    window.setWindowTitle("Менеджер паролей");
+    window.resize(400, 300);
 
-  bool success = db.InsertData(
-      "example.com", 
-      "qwerty", 
-      "social media", 
-      "main acc"
-  );
+    QLabel *label = new QLabel("test", &window);
+    label->setAlignment(Qt::AlignCenter);
+    window.setCentralWidget(label);
 
-  if (!success) {
-    std::cerr << "failed to insert\n";
-    return 1;
-  }
+    window.show();
+    Database db("passwords.db");
+    std::cout << "db open\n";
 
-  std::vector<std::vector<std::string>> result = db.ExtractData(nullptr, "social media");
-  std::vector<std::vector<std::string>> result2 = db.ExtractData("lol", nullptr);
-  std::vector<std::vector<std::string>> result3 = db.ExtractData(nullptr, nullptr);
+    bool success = db.InsertData(
+        "example.com",
+        "qwerty",
+        "social media",
+        "main acc"
+        );
 
-  bool dlt = db.DeleteData("1");
-  result3 = db.ExtractData(nullptr, nullptr);
-      for (const auto &inner_vec : result3) {
+    if (!success) {
+        std::cerr << "failed to insert\n";
+        return 1;
+    }
+
+    std::vector<std::vector<std::string>> result = db.ExtractData(nullptr, "social media");
+    std::vector<std::vector<std::string>> result2 = db.ExtractData("lol", nullptr);
+    std::vector<std::vector<std::string>> result3 = db.ExtractData(nullptr, nullptr);
+
+    bool dlt = db.DeleteData("1");
+    result3 = db.ExtractData(nullptr, nullptr);
+    for (const auto &inner_vec : result3) {
         for (const auto &elem : inner_vec) {
             std::cout << elem << " ";
         }
         std::cout << "\n";
     }
-    
-    return 0;
 
-  std::cout << "complete\n";
+    std::cout << "complete\n";
 
-return 0;
+    return app.exec();
 }
