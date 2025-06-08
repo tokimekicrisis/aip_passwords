@@ -1,4 +1,5 @@
-#pragma once
+#ifndef DATABASE_H
+#define DATABASE_H
 
 #include <sqlite3.h>
 
@@ -28,3 +29,5 @@ public:
 private:
   sqlite3* db_; 
 };
+
+#endif // DATABASE_H

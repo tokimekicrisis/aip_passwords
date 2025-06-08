@@ -5,9 +5,18 @@
 #include <iostream>
 #include <vector>
 
+/**
+ * Открытие БД.
+ * Если БД не открывается, падает с ошибкой.
+ * Иначе создает таблицу, если она уже не существует.
+ * Если по какой-то причине запрос создать таблицу не сработал,
+ * тоже выдает ошибку.
+ *
+ * @param filename Путь к базе данных.
+ */
 Database::Database(const char* filename) {
   if (sqlite3_open(filename, &db_) != SQLITE_OK) {
-    std::cerr << sqlite3_errmsg(db_) << std::endl;
+    throw std::runtime_error(sqlite3_errmsg(db_));
   }
 
   char* errMsg;
@@ -27,10 +36,22 @@ Database::Database(const char* filename) {
   }                
 }
 
+/**
+ * Закрытие БД.
+ */
 Database::~Database() {
   sqlite3_close(db_);
 }
 
+/**
+ * Добавление записи в БД.
+ *
+ * @param site Сайт.
+ * @param pw Пароль.
+ * @param cat Категория.
+ * @param cmt Комментарий.
+ * @return bool true, если все прошло успешно, в противном случае false.
+ */
 bool Database::InsertData(const char* site, const char* pw,
                           const char* cat, const char* cmt) {
   sqlite3_stmt* stmt;
@@ -57,15 +78,25 @@ bool Database::InsertData(const char* site, const char* pw,
   return true;
 }
 
+/**
+ * Изменение существующей записи в БД.
+ *
+ * @param id ID нужной записи.
+ * @param site Сайт.
+ * @param pw Пароль.
+ * @param cat Категория.
+ * @param cmt Комментарий.
+ * @return bool true, если все прошло успешно, в противном случае false.
+ */
 bool Database::UpdateData(const char* id,
                           const char* site, const char* pw,
                           const char* cat, const char* cmt) {
   sqlite3_stmt* stmt;
-  const char* query = "UPDATE TABLE"
+  const char* kQuery = "UPDATE TABLE"
                       "SET SITE = :SITE, PASSWORD = :PASSWORD, "
                       "CATEGORY = :CATEGORY, COMMENT = :COMMENT, ";
   
-  if (sqlite3_prepare_v2(db_, query, -1, &stmt, nullptr) != SQLITE_OK) {
+  if (sqlite3_prepare_v2(db_, kQuery, -1, &stmt, nullptr) != SQLITE_OK) {
     return false;
   }
 
@@ -86,6 +117,12 @@ bool Database::UpdateData(const char* id,
   return true;
 }
 
+/**
+ * Удаление существующей записи в БД.
+ *
+ * @param id ID нужной записи.
+ * @return bool true, если все прошло успешно, в противном случае false.
+ */
 bool Database::DeleteData(const char* id) {
   sqlite3_stmt* stmt;
   const char* query = "DELETE FROM PASSWORDS WHERE ID = :ID;";
@@ -107,7 +144,17 @@ bool Database::DeleteData(const char* id) {
   return true;
 }
 
-std::vector<std::vector<std::string>> Database::ExtractData(const char* search_term, 
+/**
+ * Получение записей из БД: либо по поисковому запросу, либо по категории.
+ * Если оба параметра равны nullptr, просто выдает все записи.
+ * Иначе выдает записи, где сайт или комментарий содержит данный запрос,
+ * либо где категория равна данной.
+ *
+ * @param search_term Поисковой запрос.
+ * @param cat Категория.
+ * @return std::vector<std::vector<std::string>> Соответствующие запросу записи.
+ */
+std::vector<std::vector<std::string>> Database::ExtractData(const char* search_term,
                                                             const char* cat) {
   sqlite3_stmt* stmt;
   std::string query = "SELECT * FROM PASSWORDS";
