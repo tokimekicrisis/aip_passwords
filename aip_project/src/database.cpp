@@ -5,6 +5,17 @@
 #include <iostream>
 #include <vector>
 
+const char* kXorKey = "example";
+
+
+std::string xorEncrypt(const std::string& input) {
+    std::string output = input;
+    for (int i = 0; i < input.size(); ++i) {
+        output[i] = input[i] ^ kXorKey[i % sizeof(kXorKey)];
+    }
+    return output;
+}
+
 /**
  * Открытие БД.
  * Если БД не открывается, падает с ошибкой.
@@ -62,8 +73,9 @@ bool Database::insertData(const char* site, const char* pw,
     return false;
   }
 
+  std::string encrypted = xorEncrypt(pw);
   sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":SITE"), site, -1, SQLITE_TRANSIENT);
-  sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":PASSWORD"), pw, -1, SQLITE_TRANSIENT);
+  sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":PASSWORD"), encrypted.c_str(), -1, SQLITE_TRANSIENT);
   sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":CATEGORY"), cat, -1, SQLITE_TRANSIENT);
   sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":COMMENT"), cmt, -1, SQLITE_TRANSIENT);
   
@@ -101,8 +113,9 @@ bool Database::updateData(const char* id,
     return false;
   }
 
+  std::string encrypted = xorEncrypt(pw);
   sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":SITE"), site, -1, SQLITE_TRANSIENT);
-  sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":PASSWORD"), pw, -1, SQLITE_TRANSIENT);
+  sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":PASSWORD"), encrypted.c_str(), -1, SQLITE_TRANSIENT);
   sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":CATEGORY"), cat, -1, SQLITE_TRANSIENT);
   sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":COMMENT"), cmt, -1, SQLITE_TRANSIENT);
   sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":ID"), id, -1, SQLITE_TRANSIENT);
@@ -195,7 +208,12 @@ std::vector<std::vector<std::string>> Database::extractData(const char* search_t
     std::vector<std::string> row;
     for (int i = 0; i < col_count; i++) {
       const char* val = reinterpret_cast<const char*>(sqlite3_column_text(stmt, i));
-      row.push_back(val);
+        if (i == 2) {
+            std::string decrypted = xorEncrypt(val);
+            row.push_back(decrypted);
+        } else {
+            row.push_back(val);
+        }
     }
     results.push_back(row);
   }

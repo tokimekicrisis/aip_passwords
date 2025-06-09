@@ -24,7 +24,6 @@ public:
 
 private slots:
   void onGenerateBtnClicked();
-//void onRowSelected(const QItemSelection &selected, const QItemSelection &deselected);
   void onAddBtnClicked();
   void onEditBtnClicked();
   void onDelBtnClicked();

@@ -30,13 +30,21 @@ public:
     }
 
     QVariant data(const QModelIndex &index, int role) const override {
-        if (role == Qt::DisplayRole) {
-                return QString::fromStdString(my_data[index.row()][index.column()]);
-            }
-        else {return QVariant();}
-    }
+    if (role == Qt::DisplayRole) {
+            return QString::fromStdString(my_data[index.row()][index.column()]);
+        }
+    else {return QVariant();}
+}
 
-    // QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role) const override {
+        if (role != Qt::DisplayRole)
+            return QVariant();
+
+        if (orientation == Qt::Horizontal)
+            return QString("Column %1").arg(section + 1);
+        else
+            return QString::number(section + 1);
+    }
 
 public slots:
     void updateFromDatabase(Database* db, const char* search_term = nullptr, const char* cat = nullptr) {
