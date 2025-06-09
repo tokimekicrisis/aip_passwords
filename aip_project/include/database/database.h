@@ -14,16 +14,16 @@ public:
   Database(const Database&) = delete;
   Database& operator=(const Database&) = delete;
   
-  bool InsertData(const char* site, const char* pw,
+  bool insertData(const char* site, const char* pw,
                   const char* cat, const char* cmt);
 
-  bool DeleteData(const char* id);
+  bool deleteData(const char* id);
 
-  bool UpdateData(const char* id,
+  bool updateData(const char* id,
                   const char* site, const char* pw,
                   const char* cat, const char* cmt);
   
-  std::vector<std::vector<std::string>> ExtractData(const char* search_term, 
+  std::vector<std::vector<std::string>> extractData(const char* search_term,
                                                     const char* cat);
   
 private:

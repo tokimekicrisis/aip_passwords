@@ -52,7 +52,7 @@ Database::~Database() {
  * @param cmt Комментарий.
  * @return bool true, если все прошло успешно, в противном случае false.
  */
-bool Database::InsertData(const char* site, const char* pw,
+bool Database::insertData(const char* site, const char* pw,
                           const char* cat, const char* cmt) {
   sqlite3_stmt* stmt;
   const char* query = "INSERT INTO PASSWORDS (SITE, PASSWORD, CATEGORY, COMMENT)"
@@ -88,15 +88,16 @@ bool Database::InsertData(const char* site, const char* pw,
  * @param cmt Комментарий.
  * @return bool true, если все прошло успешно, в противном случае false.
  */
-bool Database::UpdateData(const char* id,
+bool Database::updateData(const char* id,
                           const char* site, const char* pw,
                           const char* cat, const char* cmt) {
   sqlite3_stmt* stmt;
-  const char* kQuery = "UPDATE TABLE"
+  const char* query = "UPDATE PASSWORDS "
                       "SET SITE = :SITE, PASSWORD = :PASSWORD, "
-                      "CATEGORY = :CATEGORY, COMMENT = :COMMENT, ";
+                      "CATEGORY = :CATEGORY, COMMENT = :COMMENT "
+                      "WHERE ID = :ID";
   
-  if (sqlite3_prepare_v2(db_, kQuery, -1, &stmt, nullptr) != SQLITE_OK) {
+  if (sqlite3_prepare_v2(db_, query, -1, &stmt, nullptr) != SQLITE_OK) {
     return false;
   }
 
@@ -104,6 +105,7 @@ bool Database::UpdateData(const char* id,
   sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":PASSWORD"), pw, -1, SQLITE_TRANSIENT);
   sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":CATEGORY"), cat, -1, SQLITE_TRANSIENT);
   sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":COMMENT"), cmt, -1, SQLITE_TRANSIENT);
+  sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":ID"), id, -1, SQLITE_TRANSIENT);
 
     
   int rc = sqlite3_step(stmt);
@@ -123,7 +125,7 @@ bool Database::UpdateData(const char* id,
  * @param id ID нужной записи.
  * @return bool true, если все прошло успешно, в противном случае false.
  */
-bool Database::DeleteData(const char* id) {
+bool Database::deleteData(const char* id) {
   sqlite3_stmt* stmt;
   const char* query = "DELETE FROM PASSWORDS WHERE ID = :ID;";
   
@@ -154,7 +156,7 @@ bool Database::DeleteData(const char* id) {
  * @param cat Категория.
  * @return std::vector<std::vector<std::string>> Соответствующие запросу записи.
  */
-std::vector<std::vector<std::string>> Database::ExtractData(const char* search_term,
+std::vector<std::vector<std::string>> Database::extractData(const char* search_term,
                                                             const char* cat) {
   sqlite3_stmt* stmt;
   std::string query = "SELECT * FROM PASSWORDS";
@@ -170,7 +172,7 @@ std::vector<std::vector<std::string>> Database::ExtractData(const char* search_t
   }
 
   if (cat != nullptr) {
-      query += " WHERE CATEGORY IS :CAT";
+      query += " WHERE (CATEGORY = :CAT)";
   }
 
   if (sqlite3_prepare_v2(db_, query.c_str(), -1, &stmt, nullptr) != SQLITE_OK) {
@@ -183,8 +185,7 @@ std::vector<std::vector<std::string>> Database::ExtractData(const char* search_t
     sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":TERM"), term.c_str(), -1, SQLITE_TRANSIENT);
   }
 
-  if (search_term != nullptr) {
-    std::string term = "'" + std::string(search_term) + "'";
+  if (cat != nullptr) {
     sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":CAT"), cat, -1, SQLITE_TRANSIENT);
   }
 

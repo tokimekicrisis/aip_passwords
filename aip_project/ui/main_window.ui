@@ -27,9 +27,9 @@
    <widget class="QPushButton" name="edit_btn">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>190</x>
       <y>500</y>
-      <width>181</width>
+      <width>141</width>
       <height>31</height>
      </rect>
     </property>
@@ -125,14 +125,14 @@
    <widget class="QPushButton" name="add_btn">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>20</x>
       <y>500</y>
-      <width>181</width>
+      <width>101</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Добавить запись...</string>
+     <string>Добавить...</string>
     </property>
    </widget>
    <widget class="QSpinBox" name="pw_len">
@@ -159,6 +159,19 @@
     </property>
     <property name="text">
      <string>Количество символов</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="del_btn">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>500</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Удалить</string>
     </property>
    </widget>
   </widget>

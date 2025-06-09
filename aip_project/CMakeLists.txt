@@ -32,7 +32,7 @@ target_compile_definitions(sqlite3 PRIVATE
 set(UI_FILES
     ${CMAKE_SOURCE_DIR}/ui/main_window.ui
     ${CMAKE_SOURCE_DIR}/ui/edit_pw.ui
-    ${CMAKE_SOURCE_DIR}/ui/add_pw.ui
+    ${CMAKE_SOURCE_DIR}/ui/delete.ui
 )
 
 add_executable(aip_project
@@ -42,6 +42,8 @@ add_executable(aip_project
     include/ui/main_window.h
     include/ui/main_window.cpp
     include/ui/table_model.h
+    ui/password.ui
+    ui/password.ui
 )
 
 # Add generated headers directory to includes
