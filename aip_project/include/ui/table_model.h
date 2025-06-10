@@ -44,10 +44,12 @@ public:
         if (role != Qt::DisplayRole)
             return QVariant();
 
-        if (orientation == Qt::Horizontal)
-            return QString("Column %1").arg(section + 1);
-        else
-            return QString::number(section + 1);
+        if (orientation == Qt::Horizontal) {
+            static const QStringList headers = {"ID", "Site", "Password", "Category", "Comment"};
+            if (section >= 0 && section < headers.size())
+                return headers[section];
+        }
+        return QString::number(section + 1);
     }
 
 public slots:

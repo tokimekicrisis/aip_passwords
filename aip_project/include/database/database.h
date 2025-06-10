@@ -3,12 +3,16 @@
 
 #include <sqlite3.h>
 
+#include <QString>
+
 #include <vector>
 #include <string>
 
 /**
  *Наша база данных. Работает на sqlite3.
  *Инициализуется с помощью пути к файлу.
+ *Также содержит методы обработки главного пароля
+ *и шифрования паролей в БД.
  */
 class Database {
 public:
@@ -17,6 +21,11 @@ public:
   
   Database(const Database&) = delete;
   Database& operator=(const Database&) = delete;
+
+  bool isFirstRun();
+  bool setMaster(const QString& password);
+  bool verifyMaster(const QString& password);
+  std::string getMaster();
   
   bool insertData(const char* site, const char* pw,
                   const char* cat, const char* cmt);
@@ -31,7 +40,9 @@ public:
                                                     const char* cat);
   
 private:
-  sqlite3* db_; 
+  sqlite3* db_;
+  bool createMaster();
+  std::string xorEncrypt(const std::string& input);
 };
 
 #endif // DATABASE_H

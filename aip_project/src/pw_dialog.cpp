@@ -1,10 +1,19 @@
 #include "ui/pw_dialog.h"
-#include <QMessageBox>
 
-PwDialog::PwDialog(QWidget *parent) :
+#include <QMessageBox>
+#include <QSettings>
+#include <QCryptographicHash>
+
+PwDialog::PwDialog(bool first_run, QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::PwDialog) {
+    ui(new Ui::PwDialog),
+    first_run(first_run) {
     ui->setupUi(this);
+
+    setWindowTitle("Вход");
+    if (!first_run) {
+        ui->label->setText("Введите пароль:");
+    }
 
     ui->pw_text->setEchoMode(QLineEdit::Password);
     connect(ui->set_pw, &QPushButton::clicked, this, &PwDialog::onSetPwClicked);

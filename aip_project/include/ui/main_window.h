@@ -21,7 +21,7 @@ class MainWindow : public QMainWindow
   Q_OBJECT
 
 public:
-  explicit MainWindow(QWidget *parent = nullptr);
+  explicit MainWindow(Database* db, QWidget *parent = nullptr);
 
   std::string genPassword(const int len, const bool digits, const bool punct);
 

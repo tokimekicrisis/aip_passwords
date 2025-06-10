@@ -6,16 +6,16 @@
 #include <QDialog>
 
 /**
- *Диалоговое окно для ввода пароля.
- *В зависимости от того, первый это вход или нет,
- *устанавливает пароль либо совершает вход в приложение.
+ * Диалоговое окно для ввода пароля.
+ * В зависимости от того, первый это вход или нет,
+ * устанавливает пароль либо совершает вход в приложение.
  */
 class PwDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit PwDialog(QWidget *parent = nullptr);
+    PwDialog(bool first_run, QWidget *parent = nullptr);
     ~PwDialog();
 
     QString getPassword() const;
@@ -25,6 +25,7 @@ private slots:
 
 private:
     Ui::PwDialog *ui;
+    bool first_run;
 };
 
 #endif // PW_DIALOG_H

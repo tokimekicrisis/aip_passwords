@@ -6,8 +6,6 @@
 #include <QRandomGenerator>
 #include <QStyledItemDelegate>
 
-#include <iostream>
-
 /**
  * Конструктор главного окна приложения.
  * Инициализирует пользовательский интерфейс, модель таблицы и БД.
@@ -16,10 +14,10 @@
  *
  * @param parent Родительский виджет.
  */
-MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent),
+MainWindow::MainWindow(Database *db, QWidget *parent) :  QMainWindow(parent),
                                            ui(new Ui::MainWindow),
                                            table_model(new TableModel(this)),
-                                           db(new Database("passwords.db")) {
+                                           db(db) {
     ui->setupUi(this);
     connect(ui->generate_btn, &QPushButton::clicked,
             this, &MainWindow::onGenerateBtnClicked);
