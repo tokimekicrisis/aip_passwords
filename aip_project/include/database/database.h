@@ -6,6 +6,10 @@
 #include <vector>
 #include <string>
 
+/**
+ *Наша база данных. Работает на sqlite3.
+ *Инициализуется с помощью пути к файлу.
+ */
 class Database {
 public:
   Database(const char* filename);

@@ -10,6 +10,10 @@
 #include <vector>
 #include <string>
 
+
+/**
+ *Модель таблицы для отображения паролей.
+ */
 class TableModel : public QAbstractTableModel
 {
     Q_OBJECT

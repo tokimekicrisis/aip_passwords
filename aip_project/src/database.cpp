@@ -7,7 +7,11 @@
 
 const char* kXorKey = "example";
 
-
+/**
+ * Шифрование паролей методом XOR.
+ * @param input Шифруемый пароль.
+ * @return output Результат.
+ */
 std::string xorEncrypt(const std::string& input) {
     std::string output = input;
     for (int i = 0; i < input.size(); ++i) {
@@ -56,6 +60,7 @@ Database::~Database() {
 
 /**
  * Добавление записи в БД.
+ * При добавлении пароль шифруется.
  *
  * @param site Сайт.
  * @param pw Пароль.
@@ -92,6 +97,7 @@ bool Database::insertData(const char* site, const char* pw,
 
 /**
  * Изменение существующей записи в БД.
+ * При изменении пароль также шифруется.
  *
  * @param id ID нужной записи.
  * @param site Сайт.
@@ -161,6 +167,7 @@ bool Database::deleteData(const char* id) {
 
 /**
  * Получение записей из БД: либо по поисковому запросу, либо по категории.
+ * При извлечении пароль расшифровывается.
  * Если оба параметра равны nullptr, просто выдает все записи.
  * Иначе выдает записи, где сайт или комментарий содержит данный запрос,
  * либо где категория равна данной.

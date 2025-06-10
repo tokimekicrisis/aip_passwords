@@ -33,17 +33,19 @@ set(UI_FILES
     ${CMAKE_SOURCE_DIR}/ui/main_window.ui
     ${CMAKE_SOURCE_DIR}/ui/edit_pw.ui
     ${CMAKE_SOURCE_DIR}/ui/delete.ui
+    ${CMAKE_SOURCE_DIR}/ui/pw_dialog.ui
 )
 
 add_executable(aip_project
     src/main.cpp
     src/database.cpp
-    ${UI_FILES}
+    src/main_window.cpp
+    src/pw_dialog.cpp
+    include/database/database.h
     include/ui/main_window.h
-    include/ui/main_window.cpp
     include/ui/table_model.h
-    ui/password.ui
-    ui/password.ui
+    include/ui/pw_dialog.h
+    ${UI_FILES}
 )
 
 # Add generated headers directory to includes

@@ -1,6 +1,6 @@
 #include "database/database.h"
-#include "main_window.h"
-#include "table_model.h"
+#include "ui/main_window.h"
+#include "ui/table_model.h"
 
 #include <QString>
 #include <QRandomGenerator>
@@ -8,6 +8,14 @@
 
 #include <iostream>
 
+/**
+ * Конструктор главного окна приложения.
+ * Инициализирует пользовательский интерфейс, модель таблицы и БД.
+ * Устанавливает соединения кнопок интерфейса.
+ * Настраивает модель данных для таблицы и обновляет её из БД.
+ *
+ * @param parent Родительский виджет.
+ */
 MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent),
                                            ui(new Ui::MainWindow),
                                            table_model(new TableModel(this)),
@@ -80,7 +88,7 @@ void MainWindow::onGenerateBtnClicked()
 
 /**
  * Открывает окно редактирования записи по нажатию кнопки.
- * Обновляет БД согласно введенным данным.
+ * Обновляет БД и модель таблицы согласно введенным данным.
  */
 void MainWindow::onEditBtnClicked() {
     QModelIndexList selected = ui->pws_table->selectionModel()->selectedRows();
@@ -117,7 +125,7 @@ void MainWindow::onEditBtnClicked() {
 
 /**
  * Открывает окно добавления записи по нажатию кнопки.
- * Добавляет запись в БД согласно введенным данным.
+ * Обновляет БД и модель таблицы согласно введенным данным.
  */
 void MainWindow::onAddBtnClicked() {
     QDialog addDialog;
@@ -137,7 +145,7 @@ void MainWindow::onAddBtnClicked() {
 
 /**
  * Открывает окно удаления записи по нажатию кнопки.
- * Удаляет запись с соответствующим ID из БД.
+ * Удаляет запись с соответствующим ID из БД и обновляет модель таблицы.
  */
 void MainWindow::onDelBtnClicked() {
     QModelIndexList selected = ui->pws_table->selectionModel()->selectedRows();
@@ -164,8 +172,13 @@ void MainWindow::onDelBtnClicked() {
 void MainWindow::onSearchBtnClicked() {
     QString search = ui->search_bar->text();
     table_model->updateFromDatabase(db, search.toStdString().c_str(), nullptr);
-};
+}
 
+/**
+ * Фильтрует таблицу по категории по нажатию ячейки с категорией.
+ *
+ * @param cat Название категории для фильтрации.
+ */
 void MainWindow::onCategoryClicked(const QString& cat) {
     table_model->updateFromDatabase(db, nullptr, cat.toStdString().c_str());
 }
