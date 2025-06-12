@@ -6,127 +6,159 @@
 #include <iostream>
 #include <vector>
 
+/**
+ * Создает таблицу в БД, где будет храниться главный пароль.
+
+ * @return bool Успех/не успех создания таблицы.
+ */
 bool Database::createMaster() {
-    char* errMsg;
-    const char* sql = "CREATE TABLE IF NOT EXISTS MASTER_PASSWORD ("
-                      "HASH TEXT NOT NULL);";
-    return sqlite3_exec(db_, sql, nullptr, nullptr, &errMsg) == SQLITE_OK;
+  char* errMsg;
+  const char* sql = "CREATE TABLE IF NOT EXISTS MASTER_PASSWORD ("
+                    "HASH TEXT NOT NULL);";
+  return sqlite3_exec(db_, sql, nullptr, nullptr, &errMsg) == SQLITE_OK;
 }
 
+/**
+ * Проверяет, существует ли таблица для главного пароля.
+ * Если существует и не пустая, то считается, что приложение
+ * запущено не впервые.
+ * Иначе - впервые.
+ *
+ * @return bool Первый/не первый запуск.
+ */
 bool Database::isFirstRun() {
-    sqlite3_stmt* stmt;
-    const char* query = "SELECT name FROM sqlite_master WHERE type='table' AND name='MASTER_PASSWORD';";
-    if (sqlite3_prepare_v2(db_, query, -1, &stmt, nullptr) != SQLITE_OK) {
-        return true;
-    }
-    bool exists = (sqlite3_step(stmt) == SQLITE_ROW);
-    sqlite3_finalize(stmt);
+  sqlite3_stmt* stmt;
+  const char* query = "SELECT name FROM sqlite_master WHERE type='table' AND name='MASTER_PASSWORD';";
+  if (sqlite3_prepare_v2(db_, query, -1, &stmt, nullptr) != SQLITE_OK) {
+      return true;
+  }
+  bool exists = (sqlite3_step(stmt) == SQLITE_ROW);
+  sqlite3_finalize(stmt);
 
-    if (!exists) {
-        return true;
-    }
-    query = "SELECT COUNT(*) FROM MASTER_PASSWORD;";
-    if (sqlite3_prepare_v2(db_, query, -1, &stmt, nullptr) != SQLITE_OK) {
-        return true;
-    }
+  if (!exists) {
+      return true;
+  }
+  query = "SELECT COUNT(*) FROM MASTER_PASSWORD;";
+  if (sqlite3_prepare_v2(db_, query, -1, &stmt, nullptr) != SQLITE_OK) {
+      return true;
+  }
 
-    bool has_pw = (sqlite3_step(stmt) == SQLITE_ROW && sqlite3_column_int(stmt, 0) > 0);
-    sqlite3_finalize(stmt);
-    return !has_pw;
+  bool has_pw = (sqlite3_step(stmt) == SQLITE_ROW && sqlite3_column_int(stmt, 0) > 0);
+  sqlite3_finalize(stmt);
+  return !has_pw;
 }
 
+/**
+ * Задает главный пароль, хэширует и сохраняет его в БД.
+ *
+ * @return bool Успех/не успех сохранения пароля.
+ */
 bool Database::setMaster(const QString& password)
 {
-    if (!createMaster()) {
-        return false;
-    }
+  if (!createMaster()) {
+    return false;
+  }
 
-    char* errMsg;
-    const char* clear = "DELETE FROM MASTER_PASSWORD;";
-    if (sqlite3_exec(db_, clear, nullptr, nullptr, &errMsg) != SQLITE_OK) {
-        sqlite3_free(errMsg);
-        return false;
-    }
+  char* errMsg;
+  const char* clear = "DELETE FROM MASTER_PASSWORD;";
+  if (sqlite3_exec(db_, clear, nullptr, nullptr, &errMsg) != SQLITE_OK) {
+    sqlite3_free(errMsg);
+    return false;
+  }
 
-    QByteArray hash = QCryptographicHash::hash(
-                          password.toUtf8(),
-                          QCryptographicHash::Sha256
-                          ).toHex();
+  QByteArray hash = QCryptographicHash::hash(
+                        password.toUtf8(),
+                        QCryptographicHash::Sha256
+                        ).toHex();
 
-    sqlite3_stmt* stmt;
-    const char* insert = "INSERT INTO MASTER_PASSWORD (HASH) VALUES (:HASH);";
+  sqlite3_stmt* stmt;
+  const char* insert = "INSERT INTO MASTER_PASSWORD (HASH) VALUES (:HASH);";
 
-    if (sqlite3_prepare_v2(db_, insert, -1, &stmt, nullptr) != SQLITE_OK) {
-        return false;
-    }
+  if (sqlite3_prepare_v2(db_, insert, -1, &stmt, nullptr) != SQLITE_OK) {
+    return false;
+  }
 
-    sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":HASH"),
-                      hash.constData(), -1, SQLITE_TRANSIENT);
+  sqlite3_bind_text(stmt, sqlite3_bind_parameter_index(stmt, ":HASH"),
+                    hash.constData(), -1, SQLITE_TRANSIENT);
 
-    bool success = (sqlite3_step(stmt) == SQLITE_DONE);
-    sqlite3_finalize(stmt);
+  bool success = (sqlite3_step(stmt) == SQLITE_DONE);
+  sqlite3_finalize(stmt);
 
-    return success;
+  return success;
 }
 
+/**
+ * Проверяет, соответствует ли введенный пароль
+ * сохраненному в БД.
+ *
+ * @return bool Соответствие/несоответствие пароля.
+ */
 bool Database::verifyMaster(const QString& password)
 {
-    sqlite3_stmt* stmt;
-    const char* query = "SELECT HASH FROM MASTER_PASSWORD LIMIT 1;";
+  sqlite3_stmt* stmt;
+  const char* query = "SELECT HASH FROM MASTER_PASSWORD LIMIT 1;";
 
-    if (sqlite3_prepare_v2(db_, query, -1, &stmt, nullptr) != SQLITE_OK) {
-        return false;
-    }
+  if (sqlite3_prepare_v2(db_, query, -1, &stmt, nullptr) != SQLITE_OK) {
+    return false;
+  }
 
-    if (sqlite3_step(stmt) != SQLITE_ROW) {
-        sqlite3_finalize(stmt);
-        return false;
-    }
-
-    const char* stored = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
-    QByteArray input = QCryptographicHash::hash(
-                               password.toUtf8(),
-                               QCryptographicHash::Sha256
-                               ).toHex();
-
-    bool match = (input == QByteArray(stored));
+  if (sqlite3_step(stmt) != SQLITE_ROW) {
     sqlite3_finalize(stmt);
+    return false;
+  }
 
-    return match;
+  const char* stored = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
+  QByteArray input = QCryptographicHash::hash(
+                              password.toUtf8(),
+                              QCryptographicHash::Sha256
+                              ).toHex();
+
+  bool match = (input == QByteArray(stored));
+  sqlite3_finalize(stmt);
+
+  return match;
 }
 
+/**
+ * Получает главный пароль из БД
+ * (для использования как ключ для
+ * шифрования остальных паролей).
+ *
+ * @return std::string Пароль.
+ */
 std::string Database::getMaster() {
-    sqlite3_stmt* stmt;
-    const char* query = "SELECT HASH FROM MASTER_PASSWORD LIMIT 1;";
+  sqlite3_stmt* stmt;
+  const char* query = "SELECT HASH FROM MASTER_PASSWORD LIMIT 1;";
 
-    if (sqlite3_prepare_v2(db_, query, -1, &stmt, nullptr) != SQLITE_OK) {
-        throw std::runtime_error("невозможно найти ключ");
-    }
+  if (sqlite3_prepare_v2(db_, query, -1, &stmt, nullptr) != SQLITE_OK) {
+    throw std::runtime_error("невозможно найти ключ");
+  }
 
-    if (sqlite3_step(stmt) != SQLITE_ROW) {
-        sqlite3_finalize(stmt);
-        throw std::runtime_error("ключ не найден");
-    }
-
-    const char* key = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
-    std::string result(key);
+  if (sqlite3_step(stmt) != SQLITE_ROW) {
     sqlite3_finalize(stmt);
+    throw std::runtime_error("ключ не найден");
+  }
 
-    return result;
+  const char* key = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
+  std::string result = key;
+  sqlite3_finalize(stmt);
+
+  return result;
 }
 
 /**
  * Шифрование паролей методом XOR.
+ *
  * @param input Шифруемый пароль.
- * @return output Результат.
+ * @return std::string Результат.
  */
 std::string Database::xorEncrypt(const std::string& input) {
-    std::string key = getMaster();
-    std::string output = input;
-    for (size_t i = 0; i < input.size(); ++i) {
-        output[i] = input[i] ^ key[i % key.size()];
-    }
-    return output;
+  std::string key = getMaster();
+  std::string output = input;
+  for (size_t i = 0; i < input.size(); ++i) {
+      output[i] = input[i] ^ key[i % key.size()];
+  }
+  return output;
 }
 
 /**
@@ -153,12 +185,9 @@ Database::Database(const char* filename) {
 
   int rc = sqlite3_exec(db_, sql, NULL, 0, &errMsg);
   if(rc != SQLITE_OK){
-    std::cout << "Error in executing SQL: %s \n" << errMsg << std::endl;
     sqlite3_free(errMsg);
-  } else {
-    std::cout << "table made successfully" << std::endl;
-  }                
-}
+  } 
+}                
 
 /**
  * Закрытие БД.
@@ -195,11 +224,9 @@ bool Database::insertData(const char* site, const char* pw,
   
   int rc = sqlite3_step(stmt);
   if (rc != SQLITE_DONE) {
-    std::cerr << "error: " << sqlite3_errmsg(db_) << std::endl;
     return false;
-  } else {
-    std::cout << "data inserted successfully" << std::endl;
-  }
+  } 
+
   sqlite3_finalize(stmt);
   return true;
 }
@@ -238,11 +265,8 @@ bool Database::updateData(const char* id,
     
   int rc = sqlite3_step(stmt);
   if (rc != SQLITE_DONE) {
-    std::cerr << "error: " << sqlite3_errmsg(db_) << std::endl;
     return false;
-  } else {
-    std::cout << "data updated successfully" << std::endl;
-  }
+  } 
   sqlite3_finalize(stmt);
   return true;
 }
@@ -267,9 +291,7 @@ bool Database::deleteData(const char* id) {
   if (rc != SQLITE_DONE) {
     std::cerr << "error: " << sqlite3_errmsg(db_) << std::endl;
     return false;
-  } else {
-    std::cout << "data deleted successfully" << std::endl;
-  }
+  } 
   sqlite3_finalize(stmt);
   return true;
 }
@@ -296,16 +318,15 @@ std::vector<std::vector<std::string>> Database::extractData(const char* search_t
   if (search_term != nullptr) {
     query += " WHERE (SITE LIKE :TERM OR COMMENT LIKE :TERM)";
     if (cat != nullptr) {
-        query += " AND ";
+      query += " AND ";
     }
   }
 
   if (cat != nullptr) {
-      query += " WHERE (CATEGORY = :CAT)";
+    query += " WHERE (CATEGORY = :CAT)";
   }
 
   if (sqlite3_prepare_v2(db_, query.c_str(), -1, &stmt, nullptr) != SQLITE_OK) {
-    std::cout << query;
     throw std::runtime_error(sqlite3_errmsg(db_));
   }
 
@@ -325,10 +346,10 @@ std::vector<std::vector<std::string>> Database::extractData(const char* search_t
     for (int i = 0; i < col_count; i++) {
       const char* val = reinterpret_cast<const char*>(sqlite3_column_text(stmt, i));
         if (i == 2) {
-            std::string decrypted = xorEncrypt(val);
-            row.push_back(decrypted);
+          std::string decrypted = xorEncrypt(val);
+          row.push_back(decrypted);
         } else {
-            row.push_back(val);
+          row.push_back(val);
         }
     }
     results.push_back(row);

@@ -28,7 +28,6 @@ target_compile_definitions(sqlite3 PRIVATE
     SQLITE_ENABLE_FTS5
 )
 
-# List UI files with full paths
 set(UI_FILES
     ${CMAKE_SOURCE_DIR}/ui/main_window.ui
     ${CMAKE_SOURCE_DIR}/ui/edit_pw.ui
@@ -48,7 +47,6 @@ add_executable(aip_project
     ${UI_FILES}
 )
 
-# Add generated headers directory to includes
 target_include_directories(aip_project PRIVATE
     ${CMAKE_BINARY_DIR}/generated_ui
     ${CMAKE_SOURCE_DIR}/include/database

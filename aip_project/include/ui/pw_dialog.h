@@ -12,20 +12,20 @@
  */
 class PwDialog : public QDialog
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    PwDialog(bool first_run, QWidget *parent = nullptr);
-    ~PwDialog();
+  PwDialog(bool first_run, QWidget *parent = nullptr);
+  ~PwDialog();
 
-    QString getPassword() const;
+  QString getPassword() const;
 
 private slots:
-    void onSetPwClicked();
+  void onSetPwClicked();
 
 private:
-    Ui::PwDialog *ui;
-    bool first_run;
+  Ui::PwDialog *ui;
+  bool first_run;
 };
 
 #endif // PW_DIALOG_H

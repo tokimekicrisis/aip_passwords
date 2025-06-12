@@ -12,31 +12,32 @@
  * Устанавливает соединения кнопок интерфейса.
  * Настраивает модель данных для таблицы и обновляет её из БД.
  *
+ * @param db База данных.
  * @param parent Родительский виджет.
  */
 MainWindow::MainWindow(Database *db, QWidget *parent) :  QMainWindow(parent),
                                            ui(new Ui::MainWindow),
                                            table_model(new TableModel(this)),
                                            db(db) {
-    ui->setupUi(this);
-    connect(ui->generate_btn, &QPushButton::clicked,
-            this, &MainWindow::onGenerateBtnClicked);
-    connect(ui->add_btn, &QPushButton::clicked,
-            this, &MainWindow::onAddBtnClicked);
-    connect(ui->edit_btn, &QPushButton::clicked,
-            this, &MainWindow::onEditBtnClicked);
-    connect(ui->del_btn, &QPushButton::clicked,
-            this, &MainWindow::onDelBtnClicked);
-    connect(ui->search_btn, &QPushButton::clicked,
-            this, &MainWindow::onSearchBtnClicked);
-    ui->pws_table->setModel(table_model);
-    table_model->updateFromDatabase(db);
-    connect(ui->pws_table, &QTableView::clicked, this, [this](const QModelIndex &index) {
-        if (index.isValid() && index.column() == 3) {
-            QString category = table_model->data(index, Qt::DisplayRole).toString();
-            onCategoryClicked(category);
-        }
-    });
+  ui->setupUi(this);
+  connect(ui->generate_btn, &QPushButton::clicked,
+          this, &MainWindow::onGenerateBtnClicked);
+  connect(ui->add_btn, &QPushButton::clicked,
+          this, &MainWindow::onAddBtnClicked);
+  connect(ui->edit_btn, &QPushButton::clicked,
+          this, &MainWindow::onEditBtnClicked);
+  connect(ui->del_btn, &QPushButton::clicked,
+          this, &MainWindow::onDelBtnClicked);
+  connect(ui->search_btn, &QPushButton::clicked,
+          this, &MainWindow::onSearchBtnClicked);
+  ui->pws_table->setModel(table_model);
+  table_model->updateFromDatabase(db);
+  connect(ui->pws_table, &QTableView::clicked, this, [this](const QModelIndex &index) {
+      if (index.isValid() && index.column() == 3) {
+          QString category = table_model->data(index, Qt::DisplayRole).toString();
+          onCategoryClicked(category);
+      }
+  });
 }
 
 /**
@@ -50,26 +51,26 @@ MainWindow::MainWindow(Database *db, QWidget *parent) :  QMainWindow(parent),
  */
 std::string MainWindow::genPassword(const int len, const bool digits, const bool punct)
 {
-    std::string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                             "abcdefghijklmnopqrstuvwxyz";
+  std::string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            "abcdefghijklmnopqrstuvwxyz";
 
-    if (digits) {
-        characters += "0123456789";
-    }
-    if (punct) {
-        characters += "!@#$^&*()_-+=%:;/.,?";
-    }
+  if (digits) {
+      characters += "0123456789";
+  }
+  if (punct) {
+      characters += "!@#$^&*()_-+=%:;/.,?";
+  }
 
-    std::string pw;
-    pw.reserve(len);
+  std::string pw;
+  pw.reserve(len);
 
-    QRandomGenerator *generator = QRandomGenerator::global();
+  QRandomGenerator *generator = QRandomGenerator::global();
 
-    for (int i = 0; i < len; ++i) {
-        pw += characters[generator->bounded(characters.length())];
-    }
+  for (int i = 0; i < len; ++i) {
+      pw += characters[generator->bounded(characters.length())];
+  }
 
-    return pw;
+  return pw;
 }
 
 /**
@@ -77,11 +78,11 @@ std::string MainWindow::genPassword(const int len, const bool digits, const bool
  */
 void MainWindow::onGenerateBtnClicked()
 {
-    int length = ui->pw_len->value();
-    bool digits = ui->num_cb->isChecked();
-    bool punct = ui->punct_cb->isChecked();
-    std::string password = genPassword(length, digits, punct);
-    ui->gen_display->setText(QString::fromStdString(password));
+  int length = ui->pw_len->value();
+  bool digits = ui->num_cb->isChecked();
+  bool punct = ui->punct_cb->isChecked();
+  std::string password = genPassword(length, digits, punct);
+  ui->gen_display->setText(QString::fromStdString(password));
 }
 
 /**
@@ -89,36 +90,36 @@ void MainWindow::onGenerateBtnClicked()
  * Обновляет БД и модель таблицы согласно введенным данным.
  */
 void MainWindow::onEditBtnClicked() {
-    QModelIndexList selected = ui->pws_table->selectionModel()->selectedRows();
-    if (selected.isEmpty()) { return; }
+  QModelIndexList selected = ui->pws_table->selectionModel()->selectedRows();
+  if (selected.isEmpty()) { return; }
 
-    int row = selected.first().row();
+  int row = selected.first().row();
 
-    QString id = table_model->data(table_model->index(row, 0), Qt::DisplayRole).toString();
-    QString site = table_model->data(table_model->index(row, 1), Qt::DisplayRole).toString();
-    QString password = table_model->data(table_model->index(row, 2), Qt::DisplayRole).toString();
-    QString category = table_model->data(table_model->index(row, 3), Qt::DisplayRole).toString();
-    QString comment = table_model->data(table_model->index(row, 4), Qt::DisplayRole).toString();
+  QString id = table_model->data(table_model->index(row, 0), Qt::DisplayRole).toString();
+  QString site = table_model->data(table_model->index(row, 1), Qt::DisplayRole).toString();
+  QString password = table_model->data(table_model->index(row, 2), Qt::DisplayRole).toString();
+  QString category = table_model->data(table_model->index(row, 3), Qt::DisplayRole).toString();
+  QString comment = table_model->data(table_model->index(row, 4), Qt::DisplayRole).toString();
 
-    QDialog editDialog;
-    Ui::Dialog2 editUi;
-    editUi.setupUi(&editDialog);
+  QDialog editDialog;
+  Ui::Dialog2 editUi;
+  editUi.setupUi(&editDialog);
 
-    editUi.site->setText(site);
-    editUi.pw->setText(password);
-    editUi.cat->setText(category);
-    editUi.comm->setText(comment);
+  editUi.site->setText(site);
+  editUi.pw->setText(password);
+  editUi.cat->setText(category);
+  editUi.comm->setText(comment);
 
-    if (editDialog.exec() == QDialog::Accepted) {
-        bool success = db->updateData(
-            id.toStdString().c_str(),
-            editUi.site->text().toStdString().c_str(),
-            editUi.pw->text().toStdString().c_str(),
-            editUi.cat->text().toStdString().c_str(),
-            editUi.comm->text().toStdString().c_str()
-        );
-        table_model->updateFromDatabase(db);
-    }
+  if (editDialog.exec() == QDialog::Accepted) {
+    bool success = db->updateData(
+      id.toStdString().c_str(),
+      editUi.site->text().toStdString().c_str(),
+      editUi.pw->text().toStdString().c_str(),
+      editUi.cat->text().toStdString().c_str(),
+      editUi.comm->text().toStdString().c_str()
+    );
+    table_model->updateFromDatabase(db);
+  }
 }
 
 /**
@@ -126,19 +127,19 @@ void MainWindow::onEditBtnClicked() {
  * Обновляет БД и модель таблицы согласно введенным данным.
  */
 void MainWindow::onAddBtnClicked() {
-    QDialog addDialog;
-    Ui::Dialog2 addUi;
-    addUi.setupUi(&addDialog);
+  QDialog addDialog;
+  Ui::Dialog2 addUi;
+  addUi.setupUi(&addDialog);
 
-    if (addDialog.exec() == QDialog::Accepted) {
-        bool success = db->insertData(
-            addUi.site->text().toStdString().c_str(),
-            addUi.pw->text().toStdString().c_str(),
-            addUi.cat->text().toStdString().c_str(),
-            addUi.comm->text().toStdString().c_str()
-            );
-        table_model->updateFromDatabase(db);
-    }
+  if (addDialog.exec() == QDialog::Accepted) {
+      bool success = db->insertData(
+          addUi.site->text().toStdString().c_str(),
+          addUi.pw->text().toStdString().c_str(),
+          addUi.cat->text().toStdString().c_str(),
+          addUi.comm->text().toStdString().c_str()
+          );
+      table_model->updateFromDatabase(db);
+  }
 }
 
 /**
@@ -146,21 +147,21 @@ void MainWindow::onAddBtnClicked() {
  * Удаляет запись с соответствующим ID из БД и обновляет модель таблицы.
  */
 void MainWindow::onDelBtnClicked() {
-    QModelIndexList selected = ui->pws_table->selectionModel()->selectedRows();
-    if (selected.isEmpty()) { return; }
+  QModelIndexList selected = ui->pws_table->selectionModel()->selectedRows();
+  if (selected.isEmpty()) { return; }
 
-    int row = selected.first().row();
+  int row = selected.first().row();
 
-    QString id = table_model->data(table_model->index(row, 0), Qt::DisplayRole).toString();
+  QString id = table_model->data(table_model->index(row, 0), Qt::DisplayRole).toString();
 
-    QDialog deleteDialog;
-    Ui::Dialog deleteUi;
-    deleteUi.setupUi(&deleteDialog);
+  QDialog deleteDialog;
+  Ui::Dialog deleteUi;
+  deleteUi.setupUi(&deleteDialog);
 
-    if (deleteDialog.exec() == QDialog::Accepted) {
-        bool success = db->deleteData(id.toStdString().c_str());
-        table_model->updateFromDatabase(db);
-    }
+  if (deleteDialog.exec() == QDialog::Accepted) {
+    bool success = db->deleteData(id.toStdString().c_str());
+    table_model->updateFromDatabase(db);
+  }
 }
 
 /**
@@ -168,8 +169,8 @@ void MainWindow::onDelBtnClicked() {
  * Для большей информации по алгоритму поиска смотреть Database::extractData.
  */
 void MainWindow::onSearchBtnClicked() {
-    QString search = ui->search_bar->text();
-    table_model->updateFromDatabase(db, search.toStdString().c_str(), nullptr);
+  QString search = ui->search_bar->text();
+  table_model->updateFromDatabase(db, search.toStdString().c_str(), nullptr);
 }
 
 /**
@@ -178,5 +179,5 @@ void MainWindow::onSearchBtnClicked() {
  * @param cat Название категории для фильтрации.
  */
 void MainWindow::onCategoryClicked(const QString& cat) {
-    table_model->updateFromDatabase(db, nullptr, cat.toStdString().c_str());
+  table_model->updateFromDatabase(db, nullptr, cat.toStdString().c_str());
 }
