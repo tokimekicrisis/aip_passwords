@@ -37,34 +37,51 @@
 \DoxyCodeLine{00054\ \ \ \}}
 \DoxyCodeLine{00055\ }
 \DoxyCodeLine{00062\ \ \ QVariant\ \mbox{\hyperlink{class_table_model_ae7ff98675b7d5f7405e5e2ed7fe81fc9}{data}}(\textcolor{keyword}{const}\ QModelIndex\ \&index,\ \textcolor{keywordtype}{int}\ role)\textcolor{keyword}{\ const\ override\ }\{}
-\DoxyCodeLine{00063\ \ \ \textcolor{keywordflow}{if}\ (role\ ==\ Qt::DisplayRole)\ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ QString::fromStdString(my\_data[index.row()][index.column()]);}
-\DoxyCodeLine{00065\ \ \ \}}
-\DoxyCodeLine{00066\ \ \ \textcolor{keywordflow}{else}\ \{\textcolor{keywordflow}{return}\ QVariant();\ \}}
-\DoxyCodeLine{00067\ \ \ \}}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00078\ \ \ QVariant\ \mbox{\hyperlink{class_table_model_acc300ae9cc6468e1be70794319146b12}{headerData}}(\textcolor{keywordtype}{int}\ section,\ Qt::Orientation\ orientation,\ \textcolor{keywordtype}{int}\ role)\textcolor{keyword}{\ const\ override\ }\{}
-\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{if}\ (role\ !=\ Qt::DisplayRole)}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ QVariant();}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{if}\ (orientation\ ==\ Qt::Horizontal)\ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QStringList\ headers\ =\ \{\textcolor{stringliteral}{"{}ID"{}},\ \textcolor{stringliteral}{"{}Сайт"{}},\ \textcolor{stringliteral}{"{}Пароль"{}},\ \textcolor{stringliteral}{"{}Категория"{}},\ \textcolor{stringliteral}{"{}Коммент"{}}\};}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (section\ >=\ 0\ \&\&\ section\ <\ headers.size())}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ headers[section];}
-\DoxyCodeLine{00086\ \ \ \ \ \}}
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{return}\ QString::number(section\ +\ 1);}
-\DoxyCodeLine{00088\ \ \ \}}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00098\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_model_afebfa139e85b4e9739bfb37601e06284}{updateFromDatabase}}(\mbox{\hyperlink{class_database}{Database}}*\ db,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ search\_term\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ cat\ =\ \textcolor{keyword}{nullptr})\ \{}
-\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_table_model_ae7ff98675b7d5f7405e5e2ed7fe81fc9}{data}}\ =\ db-\/>\mbox{\hyperlink{class_database_ac334f8789dc4d86c5123f7c05379dd29}{extractData}}(search\_term,\ cat);}
-\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{class_table_model_afbd99e6aae8f3bed6ef182a3c1cfcdd0}{setData}}(\mbox{\hyperlink{class_table_model_ae7ff98675b7d5f7405e5e2ed7fe81fc9}{data}});}
-\DoxyCodeLine{00101\ \ \ \}}
-\DoxyCodeLine{00102\ }
-\DoxyCodeLine{00103\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00104\ \ \ std::vector<std::vector<std::string>>\ my\_data;}
-\DoxyCodeLine{00105\ \};}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TABLE\_MODEL\_H}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (!index.isValid())}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ QVariant();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{if}\ (role\ ==\ Qt::DisplayRole)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ QString::fromStdString(my\_data[index.row()][index.column()]);}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (role\ ==\ Qt::ForegroundRole\ \&\&\ index.column()\ ==\ 1)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ QColor(Qt::blue);}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (role\ ==\ Qt::FontRole\ \&\&\ index.column()\ ==\ 1)\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ QFont\ font;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ font.setUnderline(\textcolor{keyword}{true});}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ font;}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ QVariant();}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00094\ \ \ QVariant\ \mbox{\hyperlink{class_table_model_acc300ae9cc6468e1be70794319146b12}{headerData}}(\textcolor{keywordtype}{int}\ section,\ Qt::Orientation\ orientation,\ \textcolor{keywordtype}{int}\ role)\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{if}\ (role\ !=\ Qt::DisplayRole)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ QVariant();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{if}\ (orientation\ ==\ Qt::Horizontal)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QStringList\ headers\ =\ \{\textcolor{stringliteral}{"{}ID"{}},\ \textcolor{stringliteral}{"{}Сайт"{}},\ \textcolor{stringliteral}{"{}Пароль"{}},\ \textcolor{stringliteral}{"{}Категория"{}},\ \textcolor{stringliteral}{"{}Коммент"{}}\};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (section\ >=\ 0\ \&\&\ section\ <\ headers.size())}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ headers[section];}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{return}\ QString::number(section\ +\ 1);}
+\DoxyCodeLine{00104\ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00114\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_model_afebfa139e85b4e9739bfb37601e06284}{updateFromDatabase}}(\mbox{\hyperlink{class_database}{Database}}*\ db,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ search\_term\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ cat\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_table_model_ae7ff98675b7d5f7405e5e2ed7fe81fc9}{data}}\ =\ db-\/>\mbox{\hyperlink{class_database_ac334f8789dc4d86c5123f7c05379dd29}{extractData}}(search\_term,\ cat);}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{class_table_model_afbd99e6aae8f3bed6ef182a3c1cfcdd0}{setData}}(\mbox{\hyperlink{class_table_model_ae7ff98675b7d5f7405e5e2ed7fe81fc9}{data}});}
+\DoxyCodeLine{00117\ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00120\ \ \ std::vector<std::vector<std::string>>\ my\_data;}
+\DoxyCodeLine{00121\ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TABLE\_MODEL\_H}}
 
 \end{DoxyCode}

@@ -56,14 +56,30 @@ public:
   /**
   * Отображение данных в таблице.
   * @param index Индекс.
-  * @param role Роль (элемент для отображения или нет).
-  * @return QString Данные в данной ячейке.
+  * @param role Роль (атрибут ячейки: текст, цвет и т. д.).
+  * @return QVariant Данные этой ячейки.
   */
   QVariant data(const QModelIndex &index, int role) const override {
-  if (role == Qt::DisplayRole) {
-    return QString::fromStdString(my_data[index.row()][index.column()]);
-  }
-  else {return QVariant(); }
+    if (!index.isValid())
+      return QVariant();
+
+    if (role == Qt::DisplayRole) {
+      return QString::fromStdString(my_data[index.row()][index.column()]);
+    }
+
+    else if (role == Qt::ForegroundRole && index.column() == 1) {
+      return QColor(Qt::blue);
+    }
+
+    else if (role == Qt::FontRole && index.column() == 1) {
+      QFont font;
+      font.setUnderline(true);
+      return font;
+    }
+
+    else {
+      return QVariant();
+    }
   }
 
   /**
@@ -103,5 +119,6 @@ public slots:
 private:
   std::vector<std::vector<std::string>> my_data;
 };
+
 
 #endif // TABLE_MODEL_H

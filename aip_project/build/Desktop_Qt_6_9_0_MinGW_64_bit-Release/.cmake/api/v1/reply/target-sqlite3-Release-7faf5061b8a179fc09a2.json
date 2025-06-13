@@ -113,11 +113,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "sqlite3_autogen::@6890427a1f51a3e7e1df"
+			"id" : "sqlite3_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "sqlite3_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "sqlite3_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "sqlite3::@6890427a1f51a3e7e1df",

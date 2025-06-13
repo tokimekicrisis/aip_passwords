@@ -5,6 +5,8 @@
 #include <QString>
 #include <QRandomGenerator>
 #include <QStyledItemDelegate>
+#include <QDesktopServices>
+#include <QUrl>
 
 /**
  * Конструктор главного окна приложения.
@@ -33,7 +35,14 @@ MainWindow::MainWindow(Database *db, QWidget *parent) :  QMainWindow(parent),
   ui->pws_table->setModel(table_model);
   table_model->updateFromDatabase(db);
   connect(ui->pws_table, &QTableView::clicked, this, [this](const QModelIndex &index) {
-      if (index.isValid() && index.column() == 3) {
+      if (index.isValid() && index.column() == 1) {
+          QString url = table_model->data(index, Qt::DisplayRole).toString();
+          if (!url.startsWith("http://") && !url.startsWith("https://")) {
+              url.prepend("http://");
+          }
+          QDesktopServices::openUrl(QUrl(url));
+      }
+      else if (index.isValid() && index.column() == 3) {
           QString category = table_model->data(index, Qt::DisplayRole).toString();
           onCategoryClicked(category);
       }
