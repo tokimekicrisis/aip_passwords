@@ -1,0 +1,820 @@
+\doxysection{sqlite3\+\_\+api\+\_\+routines Struct Reference}
+\hypertarget{structsqlite3__api__routines}{}\label{structsqlite3__api__routines}\index{sqlite3\_api\_routines@{sqlite3\_api\_routines}}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structsqlite3__api__routines_ac2de66bfe484b182b3eb9bd11f478da6}\label{structsqlite3__api__routines_ac2de66bfe484b182b3eb9bd11f478da6} 
+void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries aggregate\+\_\+context} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, int n\+Bytes)
+\item 
+\Hypertarget{structsqlite3__api__routines_aa2f39986a5de8ec01fb5cb2aa573c08d}\label{structsqlite3__api__routines_aa2f39986a5de8ec01fb5cb2aa573c08d} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries aggregate\+\_\+count} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a2e84de4afd1ba42151a75df4d7480a72}\label{structsqlite3__api__routines_a2e84de4afd1ba42151a75df4d7480a72} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries bind\+\_\+blob} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int, const void \texorpdfstring{$\ast$}{*}, int n, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_abcdefbe78ab3ce4324d86651c03e8470}\label{structsqlite3__api__routines_abcdefbe78ab3ce4324d86651c03e8470} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries bind\+\_\+double} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int, double)
+\item 
+\Hypertarget{structsqlite3__api__routines_a70b6cc78957f11ff206df6125973daea}\label{structsqlite3__api__routines_a70b6cc78957f11ff206df6125973daea} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries bind\+\_\+int} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_ac71b110c165973291cc257973e7d6243}\label{structsqlite3__api__routines_ac71b110c165973291cc257973e7d6243} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries bind\+\_\+int64} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int, sqlite\+\_\+int64)
+\item 
+\Hypertarget{structsqlite3__api__routines_a78d546c352de656db3c15e7cc6255228}\label{structsqlite3__api__routines_a78d546c352de656db3c15e7cc6255228} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries bind\+\_\+null} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_acd345a944505eb7928568f01d7a4fe5a}\label{structsqlite3__api__routines_acd345a944505eb7928568f01d7a4fe5a} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries bind\+\_\+parameter\+\_\+count} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_af4ade5152fd51b1311463014b48dd05d}\label{structsqlite3__api__routines_af4ade5152fd51b1311463014b48dd05d} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries bind\+\_\+parameter\+\_\+index} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}z\+Name)
+\item 
+\Hypertarget{structsqlite3__api__routines_a5fdec81362b57fd3825e64154def9340}\label{structsqlite3__api__routines_a5fdec81362b57fd3825e64154def9340} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries bind\+\_\+parameter\+\_\+name} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a0b489499ca3b7e212d25ea8a86d38f0e}\label{structsqlite3__api__routines_a0b489499ca3b7e212d25ea8a86d38f0e} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries bind\+\_\+text} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int, const char \texorpdfstring{$\ast$}{*}, int n, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_ab6ad28704caf8337cf5a395154e8941c}\label{structsqlite3__api__routines_ab6ad28704caf8337cf5a395154e8941c} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries bind\+\_\+text16} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int, const void \texorpdfstring{$\ast$}{*}, int, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_a8f3424b59d6bbc836c233a44a2fd9a36}\label{structsqlite3__api__routines_a8f3424b59d6bbc836c233a44a2fd9a36} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries bind\+\_\+value} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int, const \mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ad7b688e04d388cdeb13d4c06fedb1c46}\label{structsqlite3__api__routines_ad7b688e04d388cdeb13d4c06fedb1c46} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries busy\+\_\+handler} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, int(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}, int), void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a8a4a2ccc0c7587e6c5c4db5f4b03246b}\label{structsqlite3__api__routines_a8a4a2ccc0c7587e6c5c4db5f4b03246b} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries busy\+\_\+timeout} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, int ms)
+\item 
+\Hypertarget{structsqlite3__api__routines_aef4d7748f5708731e0aaf54dbfbbec33}\label{structsqlite3__api__routines_aef4d7748f5708731e0aaf54dbfbbec33} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries changes} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a5c30292eef0130d7e8a408c4e3396012}\label{structsqlite3__api__routines_a5c30292eef0130d7e8a408c4e3396012} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries close} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a4ecc8645b639cabe1fb630aceaec9017}\label{structsqlite3__api__routines_a4ecc8645b639cabe1fb630aceaec9017} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries collation\+\_\+needed} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, int e\+Text\+Rep, const char \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_aa035538977ec61fe6df923b78db33962}\label{structsqlite3__api__routines_aa035538977ec61fe6df923b78db33962} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries collation\+\_\+needed16} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, int e\+Text\+Rep, const void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_aa32cfebd9cd577fba3d37d25b4d97506}\label{structsqlite3__api__routines_aa32cfebd9cd577fba3d37d25b4d97506} 
+const void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+blob} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int i\+Col)
+\item 
+\Hypertarget{structsqlite3__api__routines_a4925c38851818eebce76de641da69636}\label{structsqlite3__api__routines_a4925c38851818eebce76de641da69636} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+bytes} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int i\+Col)
+\item 
+\Hypertarget{structsqlite3__api__routines_a7355fc82d2138b79b2e188fd2de4d269}\label{structsqlite3__api__routines_a7355fc82d2138b79b2e188fd2de4d269} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+bytes16} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int i\+Col)
+\item 
+\Hypertarget{structsqlite3__api__routines_a3a41d82a8b13513a505889c8c9b1c97e}\label{structsqlite3__api__routines_a3a41d82a8b13513a505889c8c9b1c97e} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+count} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}p\+Stmt)
+\item 
+\Hypertarget{structsqlite3__api__routines_a8f0fdf4e51c7d5dd34df4780368d92d2}\label{structsqlite3__api__routines_a8f0fdf4e51c7d5dd34df4780368d92d2} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+database\+\_\+name} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_ae044b02f40b2889bd99e9fd677aaa784}\label{structsqlite3__api__routines_ae044b02f40b2889bd99e9fd677aaa784} 
+const void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+database\+\_\+name16} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a3c1a048eb5c98af65f664ed057214f40}\label{structsqlite3__api__routines_a3c1a048eb5c98af65f664ed057214f40} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+decltype} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int i)
+\item 
+\Hypertarget{structsqlite3__api__routines_a2c727baa39a8cb05da310df7a2eb321c}\label{structsqlite3__api__routines_a2c727baa39a8cb05da310df7a2eb321c} 
+const void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+decltype16} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a6f10fb7f35cebf6cb62a77adfdc70efc}\label{structsqlite3__api__routines_a6f10fb7f35cebf6cb62a77adfdc70efc} 
+double(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+double} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int i\+Col)
+\item 
+\Hypertarget{structsqlite3__api__routines_a066b63e4ca0f83af9eaba45b8db3e6be}\label{structsqlite3__api__routines_a066b63e4ca0f83af9eaba45b8db3e6be} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+int} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int i\+Col)
+\item 
+\Hypertarget{structsqlite3__api__routines_a6992d17196cce6a9c893df0e69ea8b17}\label{structsqlite3__api__routines_a6992d17196cce6a9c893df0e69ea8b17} 
+sqlite\+\_\+int64(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+int64} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int i\+Col)
+\item 
+\Hypertarget{structsqlite3__api__routines_a7cf45ca31b76aae075d77ef128c26b29}\label{structsqlite3__api__routines_a7cf45ca31b76aae075d77ef128c26b29} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+name} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_ab0ef397259307a3f9854fedbcca5b30a}\label{structsqlite3__api__routines_ab0ef397259307a3f9854fedbcca5b30a} 
+const void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+name16} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a7e1fc48e40d9db83e41eb240dce81cc1}\label{structsqlite3__api__routines_a7e1fc48e40d9db83e41eb240dce81cc1} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+origin\+\_\+name} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a0999526c0583faa89ab546d611a9080a}\label{structsqlite3__api__routines_a0999526c0583faa89ab546d611a9080a} 
+const void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+origin\+\_\+name16} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a5c5a8c9438f6326b32773e125767e9a5}\label{structsqlite3__api__routines_a5c5a8c9438f6326b32773e125767e9a5} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+table\+\_\+name} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a3bef5af8dc803e1ead646ca2d91ac486}\label{structsqlite3__api__routines_a3bef5af8dc803e1ead646ca2d91ac486} 
+const void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+table\+\_\+name16} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a8e594c6d22ef2179bc48a48c65787c28}\label{structsqlite3__api__routines_a8e594c6d22ef2179bc48a48c65787c28} 
+const unsigned char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+text} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int i\+Col)
+\item 
+\Hypertarget{structsqlite3__api__routines_af44dcba5983a93c39efd3460445a9c42}\label{structsqlite3__api__routines_af44dcba5983a93c39efd3460445a9c42} 
+const void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+text16} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int i\+Col)
+\item 
+\Hypertarget{structsqlite3__api__routines_a1381e48828398ae738aa2416d2e4feb9}\label{structsqlite3__api__routines_a1381e48828398ae738aa2416d2e4feb9} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+type} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int i\+Col)
+\item 
+\Hypertarget{structsqlite3__api__routines_a39985fa9fba911a73a70b1d77cba1f77}\label{structsqlite3__api__routines_a39985fa9fba911a73a70b1d77cba1f77} 
+\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries column\+\_\+value} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int i\+Col)
+\item 
+\Hypertarget{structsqlite3__api__routines_afe68455923da463a19ccd9d928c75e07}\label{structsqlite3__api__routines_afe68455923da463a19ccd9d928c75e07} 
+void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries commit\+\_\+hook} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, int(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}), void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_acf6be6ede31fda32f4f0193aafce0ba3}\label{structsqlite3__api__routines_acf6be6ede31fda32f4f0193aafce0ba3} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries complete} )(const char \texorpdfstring{$\ast$}{*}sql)
+\item 
+\Hypertarget{structsqlite3__api__routines_a12b69b88bc84fba6fe97cefa4b979eff}\label{structsqlite3__api__routines_a12b69b88bc84fba6fe97cefa4b979eff} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries complete16} )(const void \texorpdfstring{$\ast$}{*}sql)
+\item 
+\Hypertarget{structsqlite3__api__routines_a923433105b84b919ea359ef320da55b1}\label{structsqlite3__api__routines_a923433105b84b919ea359ef320da55b1} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries create\+\_\+collation} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int, void \texorpdfstring{$\ast$}{*}, int(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}, int, const void \texorpdfstring{$\ast$}{*}, int, const void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_ab3fe60d5c018e3ffcad08bec34dc53e7}\label{structsqlite3__api__routines_ab3fe60d5c018e3ffcad08bec34dc53e7} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries create\+\_\+collation16} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, int, void \texorpdfstring{$\ast$}{*}, int(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}, int, const void \texorpdfstring{$\ast$}{*}, int, const void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_a9f15bf465292b7176eddbf0287c770f8}\label{structsqlite3__api__routines_a9f15bf465292b7176eddbf0287c770f8} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries create\+\_\+function} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int, int, void \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*}x\+Func)(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, int, \mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}), void(\texorpdfstring{$\ast$}{*}x\+Step)(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, int, \mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}), void(\texorpdfstring{$\ast$}{*}x\+Final)(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_a2cb97ce7512759a08f1744e24cd0294f}\label{structsqlite3__api__routines_a2cb97ce7512759a08f1744e24cd0294f} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries create\+\_\+function16} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, int, int, void \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*}x\+Func)(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, int, \mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}), void(\texorpdfstring{$\ast$}{*}x\+Step)(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, int, \mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}), void(\texorpdfstring{$\ast$}{*}x\+Final)(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_a0d2bee02b4c2ce95aa3ae6d4b904bff6}\label{structsqlite3__api__routines_a0d2bee02b4c2ce95aa3ae6d4b904bff6} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries create\+\_\+module} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const \mbox{\hyperlink{structsqlite3__module}{sqlite3\+\_\+module}} \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a4d248c8b990dc7b96c5734ec878508a0}\label{structsqlite3__api__routines_a4d248c8b990dc7b96c5734ec878508a0} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries data\+\_\+count} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}p\+Stmt)
+\item 
+\Hypertarget{structsqlite3__api__routines_adaeccb0552d6e46c0df42e766d9971a9}\label{structsqlite3__api__routines_adaeccb0552d6e46c0df42e766d9971a9} 
+\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries db\+\_\+handle} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_abe47369f89df1193ca28751e8d024818}\label{structsqlite3__api__routines_abe47369f89df1193ca28751e8d024818} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries declare\+\_\+vtab} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ae67da9e0a3629fd1fd46fd73389d8c98}\label{structsqlite3__api__routines_ae67da9e0a3629fd1fd46fd73389d8c98} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries enable\+\_\+shared\+\_\+cache} )(int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a1a985d959eafe6f293e41a5ca1d1a2e9}\label{structsqlite3__api__routines_a1a985d959eafe6f293e41a5ca1d1a2e9} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries errcode} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}db)
+\item 
+\Hypertarget{structsqlite3__api__routines_a1dd3560461fe5a489a506e798e5f1610}\label{structsqlite3__api__routines_a1dd3560461fe5a489a506e798e5f1610} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries errmsg} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a2de354dd0030ff724bb574a4353c57e8}\label{structsqlite3__api__routines_a2de354dd0030ff724bb574a4353c57e8} 
+const void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries errmsg16} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ac6476ec4fd66eb629942bd60a47adf76}\label{structsqlite3__api__routines_ac6476ec4fd66eb629942bd60a47adf76} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries exec} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, sqlite3\+\_\+callback, void \texorpdfstring{$\ast$}{*}, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_aaf5ef34c7b325eefb8459224a5c926e8}\label{structsqlite3__api__routines_aaf5ef34c7b325eefb8459224a5c926e8} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries expired} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a0bbe0b1cdd61a2e7e089ad1e42978f6f}\label{structsqlite3__api__routines_a0bbe0b1cdd61a2e7e089ad1e42978f6f} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries finalize} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}p\+Stmt)
+\item 
+\Hypertarget{structsqlite3__api__routines_a7418560cd2dacb9a6cb0b7f5e3082787}\label{structsqlite3__api__routines_a7418560cd2dacb9a6cb0b7f5e3082787} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries free} )(void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_aa94faa431905ee9d04bb93cbce735a0c}\label{structsqlite3__api__routines_aa94faa431905ee9d04bb93cbce735a0c} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries free\+\_\+table} )(char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}result)
+\item 
+\Hypertarget{structsqlite3__api__routines_ae37e25adf7b17f97387fa1ac36094988}\label{structsqlite3__api__routines_ae37e25adf7b17f97387fa1ac36094988} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries get\+\_\+autocommit} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a01faed3e979724b5ba841be45251e024}\label{structsqlite3__api__routines_a01faed3e979724b5ba841be45251e024} 
+void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries get\+\_\+auxdata} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a3a265a9fa59237ed1630acf4b4f5efc4}\label{structsqlite3__api__routines_a3a265a9fa59237ed1630acf4b4f5efc4} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries get\+\_\+table} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a11d469bd09340c52991a7d87fe212395}\label{structsqlite3__api__routines_a11d469bd09340c52991a7d87fe212395} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries global\+\_\+recover} )(void)
+\item 
+\Hypertarget{structsqlite3__api__routines_adab3cdd36976fa72f7e6662f597818ea}\label{structsqlite3__api__routines_adab3cdd36976fa72f7e6662f597818ea} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries interruptx} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a6e69f8e7d32673cf778b58d0856e6dc7}\label{structsqlite3__api__routines_a6e69f8e7d32673cf778b58d0856e6dc7} 
+sqlite\+\_\+int64(\texorpdfstring{$\ast$}{*} {\bfseries last\+\_\+insert\+\_\+rowid} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a9404932c4ddcf48b1bd5511501963063}\label{structsqlite3__api__routines_a9404932c4ddcf48b1bd5511501963063} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries libversion} )(void)
+\item 
+\Hypertarget{structsqlite3__api__routines_ad33f785fe5f26b534a570c9055a34858}\label{structsqlite3__api__routines_ad33f785fe5f26b534a570c9055a34858} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries libversion\+\_\+number} )(void)
+\item 
+\Hypertarget{structsqlite3__api__routines_a69595b5b58d55d125b2c6c8cab569196}\label{structsqlite3__api__routines_a69595b5b58d55d125b2c6c8cab569196} 
+void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries malloc} )(int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a4a655535ae70299989e44ee86ac17949}\label{structsqlite3__api__routines_a4a655535ae70299989e44ee86ac17949} 
+char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries mprintf} )(const char \texorpdfstring{$\ast$}{*},...)
+\item 
+\Hypertarget{structsqlite3__api__routines_acc0adb13d6e87651add47577dd57e997}\label{structsqlite3__api__routines_acc0adb13d6e87651add47577dd57e997} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries open} )(const char \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a58d3ff1185d4aae08c6be2b71c4a2e23}\label{structsqlite3__api__routines_a58d3ff1185d4aae08c6be2b71c4a2e23} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries open16} )(const void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a506ea7218da25d4973721f4770ce8dc7}\label{structsqlite3__api__routines_a506ea7218da25d4973721f4770ce8dc7} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries prepare} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int, sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a6f08b1665a9ac05e3b7fab0bd8adce32}\label{structsqlite3__api__routines_a6f08b1665a9ac05e3b7fab0bd8adce32} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries prepare16} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, int, sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a24165d35071a5193aa5f9b22409fb5e9}\label{structsqlite3__api__routines_a24165d35071a5193aa5f9b22409fb5e9} 
+void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries profile} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, sqlite\+\_\+uint64), void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a58d79a7091ade0d1630d62ecf1931e9d}\label{structsqlite3__api__routines_a58d79a7091ade0d1630d62ecf1931e9d} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries progress\+\_\+handler} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, int, int(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}), void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a67bc3a965dfbe5161a2113584d78ce86}\label{structsqlite3__api__routines_a67bc3a965dfbe5161a2113584d78ce86} 
+void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries realloc} )(void \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a88551d8943b8f9cdc7abebac90998ddf}\label{structsqlite3__api__routines_a88551d8943b8f9cdc7abebac90998ddf} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries reset} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}p\+Stmt)
+\item 
+\Hypertarget{structsqlite3__api__routines_a7151cedc160519771de48f9dab665356}\label{structsqlite3__api__routines_a7151cedc160519771de48f9dab665356} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+blob} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, int, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_ae5babdc991a56b484bc7a66a993435f3}\label{structsqlite3__api__routines_ae5babdc991a56b484bc7a66a993435f3} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+double} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, double)
+\item 
+\Hypertarget{structsqlite3__api__routines_ac80d799ae1e99289af007d9690ae3085}\label{structsqlite3__api__routines_ac80d799ae1e99289af007d9690ae3085} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+error} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_aa5c6ea660625078a1256a548d8e746ba}\label{structsqlite3__api__routines_aa5c6ea660625078a1256a548d8e746ba} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+error16} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_ad1470bb8057593e97170b73b65a9e808}\label{structsqlite3__api__routines_ad1470bb8057593e97170b73b65a9e808} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+int} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_ae24ce0ec8d90ac28a6a98cfafadaa7d0}\label{structsqlite3__api__routines_ae24ce0ec8d90ac28a6a98cfafadaa7d0} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+int64} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, sqlite\+\_\+int64)
+\item 
+\Hypertarget{structsqlite3__api__routines_ab7552d3c8d27f332cb34c45ce9f7b290}\label{structsqlite3__api__routines_ab7552d3c8d27f332cb34c45ce9f7b290} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+null} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_abf4e25b69248ca865953d0d0768aa8c0}\label{structsqlite3__api__routines_abf4e25b69248ca865953d0d0768aa8c0} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+text} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_ac7d4e41cae34faec587e871f91a0691d}\label{structsqlite3__api__routines_ac7d4e41cae34faec587e871f91a0691d} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+text16} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, int, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_a953fc695bbec79fc5999bc9f2a0c94f3}\label{structsqlite3__api__routines_a953fc695bbec79fc5999bc9f2a0c94f3} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+text16be} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, int, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_a6607ea8847a57d49bdf450205f4d580f}\label{structsqlite3__api__routines_a6607ea8847a57d49bdf450205f4d580f} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+text16le} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, int, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_a077437fd729730e66afab9eb487ca10c}\label{structsqlite3__api__routines_a077437fd729730e66afab9eb487ca10c} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+value} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_aef594890ce7dba61d6883392573040d9}\label{structsqlite3__api__routines_aef594890ce7dba61d6883392573040d9} 
+void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries rollback\+\_\+hook} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}), void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a6d9843596d2d01e52eec89ab50ca6f27}\label{structsqlite3__api__routines_a6d9843596d2d01e52eec89ab50ca6f27} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries set\+\_\+authorizer} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, int(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}, int, const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}), void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a9e2419b4ef954a24408d3c12fe2b1dd7}\label{structsqlite3__api__routines_a9e2419b4ef954a24408d3c12fe2b1dd7} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries set\+\_\+auxdata} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, int, void \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_a0f5bbb7d86e1907c5e010361529d237c}\label{structsqlite3__api__routines_a0f5bbb7d86e1907c5e010361529d237c} 
+char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries xsnprintf} )(int, char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*},...)
+\item 
+\Hypertarget{structsqlite3__api__routines_ad83c0c75185e68a850ec912cb886af0d}\label{structsqlite3__api__routines_ad83c0c75185e68a850ec912cb886af0d} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries step} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a8f0cef68458ef530829177f7ca5168f9}\label{structsqlite3__api__routines_a8f0cef68458ef530829177f7ca5168f9} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries table\+\_\+column\+\_\+metadata} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, char const \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, char const \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a9225dd1e2e76c3ce649c68e2a0b0f5f5}\label{structsqlite3__api__routines_a9225dd1e2e76c3ce649c68e2a0b0f5f5} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries thread\+\_\+cleanup} )(void)
+\item 
+\Hypertarget{structsqlite3__api__routines_a354c6e15df905db1db95bfc348ce98a8}\label{structsqlite3__api__routines_a354c6e15df905db1db95bfc348ce98a8} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries total\+\_\+changes} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a06d6d39fe95c6dc28925a8060ad5563d}\label{structsqlite3__api__routines_a06d6d39fe95c6dc28925a8060ad5563d} 
+void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries trace} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*}x\+Trace)(void \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}), void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ab3c5b0d61682151cd3c8419eb4c1ca13}\label{structsqlite3__api__routines_ab3c5b0d61682151cd3c8419eb4c1ca13} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries transfer\+\_\+bindings} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_aa8f55bfadbafbccbe7da78c3818f77df}\label{structsqlite3__api__routines_aa8f55bfadbafbccbe7da78c3818f77df} 
+void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries update\+\_\+hook} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}, int, char const \texorpdfstring{$\ast$}{*}, char const \texorpdfstring{$\ast$}{*}, sqlite\+\_\+int64), void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_aa3bcc18d57809946d41d591bf7ad6c7e}\label{structsqlite3__api__routines_aa3bcc18d57809946d41d591bf7ad6c7e} 
+void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries user\+\_\+data} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a643887391be801fe3ee197ab3adc7e8b}\label{structsqlite3__api__routines_a643887391be801fe3ee197ab3adc7e8b} 
+const void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+blob} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_aaf6e53b347fe8a81b05f8144c1418022}\label{structsqlite3__api__routines_aaf6e53b347fe8a81b05f8144c1418022} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+bytes} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ad1e6349c107a4e9640d0f70a1032d9c9}\label{structsqlite3__api__routines_ad1e6349c107a4e9640d0f70a1032d9c9} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+bytes16} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a038780bf33da5a73ade808c2fbeb7f91}\label{structsqlite3__api__routines_a038780bf33da5a73ade808c2fbeb7f91} 
+double(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+double} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_aaea71f352f2637f7d43781cd279ece62}\label{structsqlite3__api__routines_aaea71f352f2637f7d43781cd279ece62} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+int} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a27cfd29e44574a9b10f0a7cb3a7c9ada}\label{structsqlite3__api__routines_a27cfd29e44574a9b10f0a7cb3a7c9ada} 
+sqlite\+\_\+int64(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+int64} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a870e384ce2056e1e608808f8527af223}\label{structsqlite3__api__routines_a870e384ce2056e1e608808f8527af223} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+numeric\+\_\+type} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ad6bfe41db8371216b6807bd1291ffbb9}\label{structsqlite3__api__routines_ad6bfe41db8371216b6807bd1291ffbb9} 
+const unsigned char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+text} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_afb385180cb9fa00609ad7448179b0230}\label{structsqlite3__api__routines_afb385180cb9fa00609ad7448179b0230} 
+const void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+text16} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a3eb61df8f638e377cab8a2685e153f2d}\label{structsqlite3__api__routines_a3eb61df8f638e377cab8a2685e153f2d} 
+const void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+text16be} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a24c683c3f17fcefa215f8196c667a485}\label{structsqlite3__api__routines_a24c683c3f17fcefa215f8196c667a485} 
+const void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+text16le} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a30e5d5464fae02a66e73c0ee6afa3a0d}\label{structsqlite3__api__routines_a30e5d5464fae02a66e73c0ee6afa3a0d} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+type} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a21f713ea350396f9948d7d39dd910762}\label{structsqlite3__api__routines_a21f713ea350396f9948d7d39dd910762} 
+char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries vmprintf} )(const char \texorpdfstring{$\ast$}{*}, va\+\_\+list)
+\item 
+\Hypertarget{structsqlite3__api__routines_a44b969d18a0986e9cef7bc8b8b35e1c2}\label{structsqlite3__api__routines_a44b969d18a0986e9cef7bc8b8b35e1c2} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries overload\+\_\+function} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}z\+Func\+Name, int n\+Arg)
+\item 
+\Hypertarget{structsqlite3__api__routines_aba67c71ba4ca3edf942ebe2c38ba93ad}\label{structsqlite3__api__routines_aba67c71ba4ca3edf942ebe2c38ba93ad} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries prepare\+\_\+v2} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int, sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a0efd64fdd8df6a3c49fcfbe2279a2fb9}\label{structsqlite3__api__routines_a0efd64fdd8df6a3c49fcfbe2279a2fb9} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries prepare16\+\_\+v2} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, int, sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a029f84e8bb05f0274c728b45668871b5}\label{structsqlite3__api__routines_a029f84e8bb05f0274c728b45668871b5} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries clear\+\_\+bindings} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_aa460b2835f8b644e463842963b98f707}\label{structsqlite3__api__routines_aa460b2835f8b644e463842963b98f707} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries create\+\_\+module\+\_\+v2} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const \mbox{\hyperlink{structsqlite3__module}{sqlite3\+\_\+module}} \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*}x\+Destroy)(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_a921d22c6502ecd97f99dbd22be7dddfe}\label{structsqlite3__api__routines_a921d22c6502ecd97f99dbd22be7dddfe} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries bind\+\_\+zeroblob} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_ab46c80d45fb83507066179b3aa232c40}\label{structsqlite3__api__routines_ab46c80d45fb83507066179b3aa232c40} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries blob\+\_\+bytes} )(sqlite3\+\_\+blob \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a71174a8c435da8c6c45e41286ca89a49}\label{structsqlite3__api__routines_a71174a8c435da8c6c45e41286ca89a49} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries blob\+\_\+close} )(sqlite3\+\_\+blob \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a31cc427bcbf4b82c9251551c5dcfe28b}\label{structsqlite3__api__routines_a31cc427bcbf4b82c9251551c5dcfe28b} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries blob\+\_\+open} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, sqlite3\+\_\+int64, int, sqlite3\+\_\+blob \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a0813b9f5cea0e7c9fae5713e8226bb7d}\label{structsqlite3__api__routines_a0813b9f5cea0e7c9fae5713e8226bb7d} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries blob\+\_\+read} )(sqlite3\+\_\+blob \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*}, int, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a3a402cb876e7d4e4f60d70924e5cc04d}\label{structsqlite3__api__routines_a3a402cb876e7d4e4f60d70924e5cc04d} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries blob\+\_\+write} )(sqlite3\+\_\+blob \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, int, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a1e15da46f3dc62b421a8e3d84e83471c}\label{structsqlite3__api__routines_a1e15da46f3dc62b421a8e3d84e83471c} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries create\+\_\+collation\+\_\+v2} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int, void \texorpdfstring{$\ast$}{*}, int(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}, int, const void \texorpdfstring{$\ast$}{*}, int, const void \texorpdfstring{$\ast$}{*}), void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_a629c5e5c03b3223242357282c84af46d}\label{structsqlite3__api__routines_a629c5e5c03b3223242357282c84af46d} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries file\+\_\+control} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int, void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a92684afad13af8e23f02fd66ec04feba}\label{structsqlite3__api__routines_a92684afad13af8e23f02fd66ec04feba} 
+sqlite3\+\_\+int64(\texorpdfstring{$\ast$}{*} {\bfseries memory\+\_\+highwater} )(int)
+\item 
+\Hypertarget{structsqlite3__api__routines_ab97513cee1fdda32d881a206e6c89b4a}\label{structsqlite3__api__routines_ab97513cee1fdda32d881a206e6c89b4a} 
+sqlite3\+\_\+int64(\texorpdfstring{$\ast$}{*} {\bfseries memory\+\_\+used} )(void)
+\item 
+\Hypertarget{structsqlite3__api__routines_a764cad1c9527651eeec3341fd7a4bbbb}\label{structsqlite3__api__routines_a764cad1c9527651eeec3341fd7a4bbbb} 
+\mbox{\hyperlink{structsqlite3__mutex}{sqlite3\+\_\+mutex}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries mutex\+\_\+alloc} )(int)
+\item 
+\Hypertarget{structsqlite3__api__routines_afbf4a8e88080839fccf5dcd63ea2cee4}\label{structsqlite3__api__routines_afbf4a8e88080839fccf5dcd63ea2cee4} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries mutex\+\_\+enter} )(\mbox{\hyperlink{structsqlite3__mutex}{sqlite3\+\_\+mutex}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_acbc66bc0d281c1b113c455409bdce8ad}\label{structsqlite3__api__routines_acbc66bc0d281c1b113c455409bdce8ad} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries mutex\+\_\+free} )(\mbox{\hyperlink{structsqlite3__mutex}{sqlite3\+\_\+mutex}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a7d02b385cc7de28a4a12cc2893d51f0a}\label{structsqlite3__api__routines_a7d02b385cc7de28a4a12cc2893d51f0a} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries mutex\+\_\+leave} )(\mbox{\hyperlink{structsqlite3__mutex}{sqlite3\+\_\+mutex}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_aa3eed04dafa14724d23f3e74a6891575}\label{structsqlite3__api__routines_aa3eed04dafa14724d23f3e74a6891575} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries mutex\+\_\+try} )(\mbox{\hyperlink{structsqlite3__mutex}{sqlite3\+\_\+mutex}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a1e6684ec7752ca3aea64da0049490083}\label{structsqlite3__api__routines_a1e6684ec7752ca3aea64da0049490083} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries open\+\_\+v2} )(const char \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, int, const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a34fba43ed54a03e129804659ccb379d1}\label{structsqlite3__api__routines_a34fba43ed54a03e129804659ccb379d1} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries release\+\_\+memory} )(int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a51e4c10c9ad6aa8b2925cac3b07db982}\label{structsqlite3__api__routines_a51e4c10c9ad6aa8b2925cac3b07db982} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+error\+\_\+nomem} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a8d8d0f8b76631dc4c976caf8e4b69714}\label{structsqlite3__api__routines_a8d8d0f8b76631dc4c976caf8e4b69714} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+error\+\_\+toobig} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a87cb2a664bb94f1a96fd4c3bf02a5e25}\label{structsqlite3__api__routines_a87cb2a664bb94f1a96fd4c3bf02a5e25} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries sleep} )(int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a720a37e18110008f32c32b43e6df7bd6}\label{structsqlite3__api__routines_a720a37e18110008f32c32b43e6df7bd6} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries soft\+\_\+heap\+\_\+limit} )(int)
+\item 
+\Hypertarget{structsqlite3__api__routines_aea3a39697ee1ad0cc2be0a8ccdd555cc}\label{structsqlite3__api__routines_aea3a39697ee1ad0cc2be0a8ccdd555cc} 
+\mbox{\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries vfs\+\_\+find} )(const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a9dcb6d9f177c3669ed33323ad403533d}\label{structsqlite3__api__routines_a9dcb6d9f177c3669ed33323ad403533d} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries vfs\+\_\+register} )(\mbox{\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs}} \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a9b7990440de7637d0279b90e6cdaab23}\label{structsqlite3__api__routines_a9b7990440de7637d0279b90e6cdaab23} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries vfs\+\_\+unregister} )(\mbox{\hyperlink{structsqlite3__vfs}{sqlite3\+\_\+vfs}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a965bd76d061a5f47729a6c96faac3aa2}\label{structsqlite3__api__routines_a965bd76d061a5f47729a6c96faac3aa2} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries xthreadsafe} )(void)
+\item 
+\Hypertarget{structsqlite3__api__routines_a9bd6a486d3a06555e019e02ab269439c}\label{structsqlite3__api__routines_a9bd6a486d3a06555e019e02ab269439c} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+zeroblob} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_aef0ea817c076999387222eb34cba23ba}\label{structsqlite3__api__routines_aef0ea817c076999387222eb34cba23ba} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+error\+\_\+code} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_ab6f85c56db22f4b114b57a6538dfe186}\label{structsqlite3__api__routines_ab6f85c56db22f4b114b57a6538dfe186} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries test\+\_\+control} )(int,...)
+\item 
+\Hypertarget{structsqlite3__api__routines_addef940dbc8b1d1c1356f3e4ee494540}\label{structsqlite3__api__routines_addef940dbc8b1d1c1356f3e4ee494540} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries randomness} )(int, void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a320442102ae85400965c3059746f2d6d}\label{structsqlite3__api__routines_a320442102ae85400965c3059746f2d6d} 
+\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries context\+\_\+db\+\_\+handle} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_afbe050a2c8ff2d13c27e8756e753cf86}\label{structsqlite3__api__routines_afbe050a2c8ff2d13c27e8756e753cf86} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries extended\+\_\+result\+\_\+codes} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a05f3f0b267ba34ede22140d89d86f61b}\label{structsqlite3__api__routines_a05f3f0b267ba34ede22140d89d86f61b} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries limit} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, int, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a8a805bbf991b0d48803a14ae80b87351}\label{structsqlite3__api__routines_a8a805bbf991b0d48803a14ae80b87351} 
+sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries next\+\_\+stmt} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ada3cef241fff5dce37806fc530fd71af}\label{structsqlite3__api__routines_ada3cef241fff5dce37806fc530fd71af} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries sql} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a8fe0dcf3d691ef190272907e6fc9a8ae}\label{structsqlite3__api__routines_a8fe0dcf3d691ef190272907e6fc9a8ae} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries status} )(int, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a6ca4fa715197a02df80ee6a9ff58c9d3}\label{structsqlite3__api__routines_a6ca4fa715197a02df80ee6a9ff58c9d3} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries backup\+\_\+finish} )(\mbox{\hyperlink{structsqlite3__backup}{sqlite3\+\_\+backup}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_add37bd26b0778db18f8a7d4695f4b8cd}\label{structsqlite3__api__routines_add37bd26b0778db18f8a7d4695f4b8cd} 
+\mbox{\hyperlink{structsqlite3__backup}{sqlite3\+\_\+backup}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries backup\+\_\+init} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ae5500071d0a9d35db9273026a95857a8}\label{structsqlite3__api__routines_ae5500071d0a9d35db9273026a95857a8} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries backup\+\_\+pagecount} )(\mbox{\hyperlink{structsqlite3__backup}{sqlite3\+\_\+backup}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_aff1d913159dfdfc5105e783ea9ec45f8}\label{structsqlite3__api__routines_aff1d913159dfdfc5105e783ea9ec45f8} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries backup\+\_\+remaining} )(\mbox{\hyperlink{structsqlite3__backup}{sqlite3\+\_\+backup}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ac21f3f6f76ad8f076e027fc3b85e2a6c}\label{structsqlite3__api__routines_ac21f3f6f76ad8f076e027fc3b85e2a6c} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries backup\+\_\+step} )(\mbox{\hyperlink{structsqlite3__backup}{sqlite3\+\_\+backup}} \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a45c0699620187c6b93feb87badb3621e}\label{structsqlite3__api__routines_a45c0699620187c6b93feb87badb3621e} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries compileoption\+\_\+get} )(int)
+\item 
+\Hypertarget{structsqlite3__api__routines_adf40a6ff73a45b6f0d99628860b27565}\label{structsqlite3__api__routines_adf40a6ff73a45b6f0d99628860b27565} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries compileoption\+\_\+used} )(const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_aaaefe1980584ef9d0c6d22503d68e926}\label{structsqlite3__api__routines_aaaefe1980584ef9d0c6d22503d68e926} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries create\+\_\+function\+\_\+v2} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int, int, void \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*}x\+Func)(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, int, \mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}), void(\texorpdfstring{$\ast$}{*}x\+Step)(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, int, \mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}), void(\texorpdfstring{$\ast$}{*}x\+Final)(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}), void(\texorpdfstring{$\ast$}{*}x\+Destroy)(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_aa0410a68af506e04f9b5ce6f7d2c195f}\label{structsqlite3__api__routines_aa0410a68af506e04f9b5ce6f7d2c195f} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries db\+\_\+config} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, int,...)
+\item 
+\Hypertarget{structsqlite3__api__routines_a08f1bf45664edd9ca3f3be48e1eb44c7}\label{structsqlite3__api__routines_a08f1bf45664edd9ca3f3be48e1eb44c7} 
+\mbox{\hyperlink{structsqlite3__mutex}{sqlite3\+\_\+mutex}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries db\+\_\+mutex} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ab0ae4fb049a3157617d73eb6a944d567}\label{structsqlite3__api__routines_ab0ae4fb049a3157617d73eb6a944d567} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries db\+\_\+status} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, int, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a4dc19fae70a22f0bce829e7be36bea3a}\label{structsqlite3__api__routines_a4dc19fae70a22f0bce829e7be36bea3a} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries extended\+\_\+errcode} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a0111f46a6683e3388f3ba8dd494fa04c}\label{structsqlite3__api__routines_a0111f46a6683e3388f3ba8dd494fa04c} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries log} )(int, const char \texorpdfstring{$\ast$}{*},...)
+\item 
+\Hypertarget{structsqlite3__api__routines_ab3c891f0430b0a79449e16553fe2f7eb}\label{structsqlite3__api__routines_ab3c891f0430b0a79449e16553fe2f7eb} 
+sqlite3\+\_\+int64(\texorpdfstring{$\ast$}{*} {\bfseries soft\+\_\+heap\+\_\+limit64} )(sqlite3\+\_\+int64)
+\item 
+\Hypertarget{structsqlite3__api__routines_a4d057a4d14813e201bcba24befb896e0}\label{structsqlite3__api__routines_a4d057a4d14813e201bcba24befb896e0} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries sourceid} )(void)
+\item 
+\Hypertarget{structsqlite3__api__routines_aa9ab187c1c6a398aa67095978485dffe}\label{structsqlite3__api__routines_aa9ab187c1c6a398aa67095978485dffe} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries stmt\+\_\+status} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_afae159e66af1ef44594688fc0c5776d6}\label{structsqlite3__api__routines_afae159e66af1ef44594688fc0c5776d6} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries strnicmp} )(const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a600f476bdaff1340fa4fa6255e4f0394}\label{structsqlite3__api__routines_a600f476bdaff1340fa4fa6255e4f0394} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries unlock\+\_\+notify} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, int), void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_af3184be467b46b0100a6b3bc082ccd6a}\label{structsqlite3__api__routines_af3184be467b46b0100a6b3bc082ccd6a} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries wal\+\_\+autocheckpoint} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_af247dfe2f6e83e4de878c087e7418a79}\label{structsqlite3__api__routines_af247dfe2f6e83e4de878c087e7418a79} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries wal\+\_\+checkpoint} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a292a8d9a6a16456f942b52ab6fc2c1c1}\label{structsqlite3__api__routines_a292a8d9a6a16456f942b52ab6fc2c1c1} 
+void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries wal\+\_\+hook} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, int(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int), void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a457411772bf6cf8883acd7a27526a68f}\label{structsqlite3__api__routines_a457411772bf6cf8883acd7a27526a68f} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries blob\+\_\+reopen} )(sqlite3\+\_\+blob \texorpdfstring{$\ast$}{*}, sqlite3\+\_\+int64)
+\item 
+\Hypertarget{structsqlite3__api__routines_ad6c9d2c982e53a0b65005b1d70b9eead}\label{structsqlite3__api__routines_ad6c9d2c982e53a0b65005b1d70b9eead} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries vtab\+\_\+config} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, int op,...)
+\item 
+\Hypertarget{structsqlite3__api__routines_a888c89ab06f21c953c7c27fdc00dd86c}\label{structsqlite3__api__routines_a888c89ab06f21c953c7c27fdc00dd86c} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries vtab\+\_\+on\+\_\+conflict} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_abb98b8486cbe7d739b8840d3d90baa30}\label{structsqlite3__api__routines_abb98b8486cbe7d739b8840d3d90baa30} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries close\+\_\+v2} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_af2dd3e07f7377fe84369790737e0602f}\label{structsqlite3__api__routines_af2dd3e07f7377fe84369790737e0602f} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries db\+\_\+filename} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a192b2ee2b6bd5a57cbb74bf72266a9e7}\label{structsqlite3__api__routines_a192b2ee2b6bd5a57cbb74bf72266a9e7} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries db\+\_\+readonly} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a32bf57d7ff76e4153ca7fe2552bd168f}\label{structsqlite3__api__routines_a32bf57d7ff76e4153ca7fe2552bd168f} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries db\+\_\+release\+\_\+memory} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ad78afe8b25f440d040c4a22bd797a845}\label{structsqlite3__api__routines_ad78afe8b25f440d040c4a22bd797a845} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries errstr} )(int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a046c107f8b417c85acc32a4d964aa913}\label{structsqlite3__api__routines_a046c107f8b417c85acc32a4d964aa913} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries stmt\+\_\+busy} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a04499bf64d666eb00fb19ae01cdbb8b1}\label{structsqlite3__api__routines_a04499bf64d666eb00fb19ae01cdbb8b1} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries stmt\+\_\+readonly} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_aa6c2af28787384ae1f266ba2d7d97972}\label{structsqlite3__api__routines_aa6c2af28787384ae1f266ba2d7d97972} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries stricmp} )(const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ac0aebc3fb86e2537e04be6db52d4a395}\label{structsqlite3__api__routines_ac0aebc3fb86e2537e04be6db52d4a395} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries uri\+\_\+boolean} )(const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a70dfce68b81e6c77b3e6c3d8e874c070}\label{structsqlite3__api__routines_a70dfce68b81e6c77b3e6c3d8e874c070} 
+sqlite3\+\_\+int64(\texorpdfstring{$\ast$}{*} {\bfseries uri\+\_\+int64} )(const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, sqlite3\+\_\+int64)
+\item 
+\Hypertarget{structsqlite3__api__routines_ab6b039df9df3d8b0c3d304b41bb37bb2}\label{structsqlite3__api__routines_ab6b039df9df3d8b0c3d304b41bb37bb2} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries uri\+\_\+parameter} )(const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a4d4fab1736c7baf5d422988f40b5037a}\label{structsqlite3__api__routines_a4d4fab1736c7baf5d422988f40b5037a} 
+char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries xvsnprintf} )(int, char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, va\+\_\+list)
+\item 
+\Hypertarget{structsqlite3__api__routines_a86ce375053098d8fbb2d686e9d98d12e}\label{structsqlite3__api__routines_a86ce375053098d8fbb2d686e9d98d12e} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries wal\+\_\+checkpoint\+\_\+v2} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int, int \texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a19d7b88cb46d7c9984c681eaf3ebf1a6}\label{structsqlite3__api__routines_a19d7b88cb46d7c9984c681eaf3ebf1a6} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries auto\+\_\+extension} )(void(\texorpdfstring{$\ast$}{*})(void))
+\item 
+\Hypertarget{structsqlite3__api__routines_aa34e69966762f91f4570cee3cb8f630f}\label{structsqlite3__api__routines_aa34e69966762f91f4570cee3cb8f630f} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries bind\+\_\+blob64} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int, const void \texorpdfstring{$\ast$}{*}, sqlite3\+\_\+uint64, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_aab0cca7b94c71fa0e335cdbb17820ab5}\label{structsqlite3__api__routines_aab0cca7b94c71fa0e335cdbb17820ab5} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries bind\+\_\+text64} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int, const char \texorpdfstring{$\ast$}{*}, sqlite3\+\_\+uint64, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}), unsigned char)
+\item 
+\Hypertarget{structsqlite3__api__routines_ad2af85260429714c4bde212f2d0f0516}\label{structsqlite3__api__routines_ad2af85260429714c4bde212f2d0f0516} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries cancel\+\_\+auto\+\_\+extension} )(void(\texorpdfstring{$\ast$}{*})(void))
+\item 
+\Hypertarget{structsqlite3__api__routines_a33eef15b418c498b26cd052daf668f01}\label{structsqlite3__api__routines_a33eef15b418c498b26cd052daf668f01} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries load\+\_\+extension} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a3c7079b93349cc3aa54f9266ed7b77fe}\label{structsqlite3__api__routines_a3c7079b93349cc3aa54f9266ed7b77fe} 
+void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries malloc64} )(sqlite3\+\_\+uint64)
+\item 
+\Hypertarget{structsqlite3__api__routines_a9cee16233cf2f31c23dbda654b1fdfc1}\label{structsqlite3__api__routines_a9cee16233cf2f31c23dbda654b1fdfc1} 
+sqlite3\+\_\+uint64(\texorpdfstring{$\ast$}{*} {\bfseries msize} )(void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a9a78a5006fd24ce88df88a7f1222e9f2}\label{structsqlite3__api__routines_a9a78a5006fd24ce88df88a7f1222e9f2} 
+void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries realloc64} )(void \texorpdfstring{$\ast$}{*}, sqlite3\+\_\+uint64)
+\item 
+\Hypertarget{structsqlite3__api__routines_a4424e3f8a5f42d705b4619c16959ef4a}\label{structsqlite3__api__routines_a4424e3f8a5f42d705b4619c16959ef4a} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries reset\+\_\+auto\+\_\+extension} )(void)
+\item 
+\Hypertarget{structsqlite3__api__routines_a35e4c25461a807bfdebca7fbc1d0bc74}\label{structsqlite3__api__routines_a35e4c25461a807bfdebca7fbc1d0bc74} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+blob64} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, sqlite3\+\_\+uint64, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_af2a0506a21f0c52b06d1104af25b1555}\label{structsqlite3__api__routines_af2a0506a21f0c52b06d1104af25b1555} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+text64} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, sqlite3\+\_\+uint64, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}), unsigned char)
+\item 
+\Hypertarget{structsqlite3__api__routines_ac45b5832c7bfe7e61cdaaea05aa88f00}\label{structsqlite3__api__routines_ac45b5832c7bfe7e61cdaaea05aa88f00} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries strglob} )(const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_abb64964e45b436879871d45e04c12f63}\label{structsqlite3__api__routines_abb64964e45b436879871d45e04c12f63} 
+\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+dup} )(const \mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a8ef401c465629f4f61f574cc98e01955}\label{structsqlite3__api__routines_a8ef401c465629f4f61f574cc98e01955} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+free} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_aa2107e2591aa7a9e0e883b1972d32492}\label{structsqlite3__api__routines_aa2107e2591aa7a9e0e883b1972d32492} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+zeroblob64} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, sqlite3\+\_\+uint64)
+\item 
+\Hypertarget{structsqlite3__api__routines_a850381c76781be8047b309a7f9d34e67}\label{structsqlite3__api__routines_a850381c76781be8047b309a7f9d34e67} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries bind\+\_\+zeroblob64} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int, sqlite3\+\_\+uint64)
+\item 
+\Hypertarget{structsqlite3__api__routines_af0f929f8987bb8a039fa5cdc4f74dc4f}\label{structsqlite3__api__routines_af0f929f8987bb8a039fa5cdc4f74dc4f} 
+unsigned int(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+subtype} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ae66c67a4fcb9eef1c7c0f1ba0578176a}\label{structsqlite3__api__routines_ae66c67a4fcb9eef1c7c0f1ba0578176a} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+subtype} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, unsigned int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a9c7fc0670fc12345b03148a9b7cd22e0}\label{structsqlite3__api__routines_a9c7fc0670fc12345b03148a9b7cd22e0} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries status64} )(int, sqlite3\+\_\+int64 \texorpdfstring{$\ast$}{*}, sqlite3\+\_\+int64 \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_aeb83edd8809c64405e7a4546721a6d07}\label{structsqlite3__api__routines_aeb83edd8809c64405e7a4546721a6d07} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries strlike} )(const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, unsigned int)
+\item 
+\Hypertarget{structsqlite3__api__routines_affc9f6591079f5929d8cfbca79927dcc}\label{structsqlite3__api__routines_affc9f6591079f5929d8cfbca79927dcc} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries db\+\_\+cacheflush} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a47c5c8b23150912e014dd155cf8f4ddd}\label{structsqlite3__api__routines_a47c5c8b23150912e014dd155cf8f4ddd} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries system\+\_\+errno} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a1e15157983af5536336892fdc5707275}\label{structsqlite3__api__routines_a1e15157983af5536336892fdc5707275} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries trace\+\_\+v2} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, unsigned, int(\texorpdfstring{$\ast$}{*})(unsigned, void \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*}), void \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a6f97210d0054f1ac0515ce993c091a9b}\label{structsqlite3__api__routines_a6f97210d0054f1ac0515ce993c091a9b} 
+char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries expanded\+\_\+sql} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a91032b40e6e5987b091bcc5658fea445}\label{structsqlite3__api__routines_a91032b40e6e5987b091bcc5658fea445} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries set\+\_\+last\+\_\+insert\+\_\+rowid} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, sqlite3\+\_\+int64)
+\item 
+\Hypertarget{structsqlite3__api__routines_a99bd8831d44559ddc7f994d49aa1097e}\label{structsqlite3__api__routines_a99bd8831d44559ddc7f994d49aa1097e} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries prepare\+\_\+v3} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int, unsigned int, sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a78d99593cbe26cc7cfee771a218c6393}\label{structsqlite3__api__routines_a78d99593cbe26cc7cfee771a218c6393} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries prepare16\+\_\+v3} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}, int, unsigned int, sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, const void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a4ef1b575694d6406ec4f6d81bceca20e}\label{structsqlite3__api__routines_a4ef1b575694d6406ec4f6d81bceca20e} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries bind\+\_\+pointer} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int, void \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_a86290eb9ad3bafc1c575d702d92eac3d}\label{structsqlite3__api__routines_a86290eb9ad3bafc1c575d702d92eac3d} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries result\+\_\+pointer} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_a7200dc1b412c09d25b97f391182e2054}\label{structsqlite3__api__routines_a7200dc1b412c09d25b97f391182e2054} 
+void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+pointer} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a8bfe65d1b203bf52c512483cb38e0b6c}\label{structsqlite3__api__routines_a8bfe65d1b203bf52c512483cb38e0b6c} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries vtab\+\_\+nochange} )(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a291611a46db5991857ec5e0893194818}\label{structsqlite3__api__routines_a291611a46db5991857ec5e0893194818} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+nochange} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_afb91be1d125d81d959ae924fc3fd5a40}\label{structsqlite3__api__routines_afb91be1d125d81d959ae924fc3fd5a40} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries vtab\+\_\+collation} )(\mbox{\hyperlink{structsqlite3__index__info}{sqlite3\+\_\+index\+\_\+info}} \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a2fbb90e95d2849a4ac1ed2fdcd2a796d}\label{structsqlite3__api__routines_a2fbb90e95d2849a4ac1ed2fdcd2a796d} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries keyword\+\_\+count} )(void)
+\item 
+\Hypertarget{structsqlite3__api__routines_af7be5ba4689e6c27894eae7b441f5f65}\label{structsqlite3__api__routines_af7be5ba4689e6c27894eae7b441f5f65} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries keyword\+\_\+name} )(int, const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, int \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ab1f86cd77d1048b954016670d85e2333}\label{structsqlite3__api__routines_ab1f86cd77d1048b954016670d85e2333} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries keyword\+\_\+check} )(const char \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a84e0c29039759b991b8f834b111542c1}\label{structsqlite3__api__routines_a84e0c29039759b991b8f834b111542c1} 
+\mbox{\hyperlink{structsqlite3__str}{sqlite3\+\_\+str}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries str\+\_\+new} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ad2cf0251a2bfece4e7258af2e712121a}\label{structsqlite3__api__routines_ad2cf0251a2bfece4e7258af2e712121a} 
+char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries str\+\_\+finish} )(\mbox{\hyperlink{structsqlite3__str}{sqlite3\+\_\+str}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ac90b97807313ecf9010f8a9e6585cd9b}\label{structsqlite3__api__routines_ac90b97807313ecf9010f8a9e6585cd9b} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries str\+\_\+appendf} )(\mbox{\hyperlink{structsqlite3__str}{sqlite3\+\_\+str}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}z\+Format,...)
+\item 
+\Hypertarget{structsqlite3__api__routines_a3a193483fe1f1cfd6cc3a856d11deb09}\label{structsqlite3__api__routines_a3a193483fe1f1cfd6cc3a856d11deb09} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries str\+\_\+vappendf} )(\mbox{\hyperlink{structsqlite3__str}{sqlite3\+\_\+str}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}z\+Format, va\+\_\+list)
+\item 
+\Hypertarget{structsqlite3__api__routines_abf43aaa33bbd2b6db50ec5e94cd4ef86}\label{structsqlite3__api__routines_abf43aaa33bbd2b6db50ec5e94cd4ef86} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries str\+\_\+append} )(\mbox{\hyperlink{structsqlite3__str}{sqlite3\+\_\+str}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}z\+In, int N)
+\item 
+\Hypertarget{structsqlite3__api__routines_a8a4124fd1b3cea365a385c6a6ea85e2e}\label{structsqlite3__api__routines_a8a4124fd1b3cea365a385c6a6ea85e2e} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries str\+\_\+appendall} )(\mbox{\hyperlink{structsqlite3__str}{sqlite3\+\_\+str}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}z\+In)
+\item 
+\Hypertarget{structsqlite3__api__routines_a31d4cfd25c93aaf595a2cf17df31496d}\label{structsqlite3__api__routines_a31d4cfd25c93aaf595a2cf17df31496d} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries str\+\_\+appendchar} )(\mbox{\hyperlink{structsqlite3__str}{sqlite3\+\_\+str}} \texorpdfstring{$\ast$}{*}, int N, char C)
+\item 
+\Hypertarget{structsqlite3__api__routines_adfa86d473cecdf4d2b61487ecec39bda}\label{structsqlite3__api__routines_adfa86d473cecdf4d2b61487ecec39bda} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries str\+\_\+reset} )(\mbox{\hyperlink{structsqlite3__str}{sqlite3\+\_\+str}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a7077992319949b759d076af0764607b3}\label{structsqlite3__api__routines_a7077992319949b759d076af0764607b3} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries str\+\_\+errcode} )(\mbox{\hyperlink{structsqlite3__str}{sqlite3\+\_\+str}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_acd8dfa17758d89f9cf458675ade84c63}\label{structsqlite3__api__routines_acd8dfa17758d89f9cf458675ade84c63} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries str\+\_\+length} )(\mbox{\hyperlink{structsqlite3__str}{sqlite3\+\_\+str}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a5b9b53496b4b49645b4117aeb52fe651}\label{structsqlite3__api__routines_a5b9b53496b4b49645b4117aeb52fe651} 
+char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries str\+\_\+value} )(\mbox{\hyperlink{structsqlite3__str}{sqlite3\+\_\+str}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ab4d05ca442823cbaaa94830ef4f3da02}\label{structsqlite3__api__routines_ab4d05ca442823cbaaa94830ef4f3da02} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries create\+\_\+window\+\_\+function} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int, int, void \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*}x\+Step)(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, int, \mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}), void(\texorpdfstring{$\ast$}{*}x\+Final)(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}), void(\texorpdfstring{$\ast$}{*}x\+Value)(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}), void(\texorpdfstring{$\ast$}{*}x\+Inv)(\mbox{\hyperlink{structsqlite3__context}{sqlite3\+\_\+context}} \texorpdfstring{$\ast$}{*}, int, \mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}), void(\texorpdfstring{$\ast$}{*}x\+Destroy)(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_a14fa29c03e417393da0870037508a589}\label{structsqlite3__api__routines_a14fa29c03e417393da0870037508a589} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries normalized\+\_\+sql} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a66faa4b9e69f34e4df5bfdacb46a0d91}\label{structsqlite3__api__routines_a66faa4b9e69f34e4df5bfdacb46a0d91} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries stmt\+\_\+isexplain} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a96574c46add15879087d58a5df798eff}\label{structsqlite3__api__routines_a96574c46add15879087d58a5df798eff} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+frombind} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ad8aefbc588785529f30fdd06bb3ec52c}\label{structsqlite3__api__routines_ad8aefbc588785529f30fdd06bb3ec52c} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries drop\+\_\+modules} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a887d7837ed789da07f19b34b12be0063}\label{structsqlite3__api__routines_a887d7837ed789da07f19b34b12be0063} 
+sqlite3\+\_\+int64(\texorpdfstring{$\ast$}{*} {\bfseries hard\+\_\+heap\+\_\+limit64} )(sqlite3\+\_\+int64)
+\item 
+\Hypertarget{structsqlite3__api__routines_af3ed505e8ac2692c172dd5e62f07cd01}\label{structsqlite3__api__routines_af3ed505e8ac2692c172dd5e62f07cd01} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries uri\+\_\+key} )(const char \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a695fc4a63cf1942ac95d8fd2911f4d86}\label{structsqlite3__api__routines_a695fc4a63cf1942ac95d8fd2911f4d86} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries filename\+\_\+database} )(const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a431a95f5a7639220c02d49d6cc05c9e1}\label{structsqlite3__api__routines_a431a95f5a7639220c02d49d6cc05c9e1} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries filename\+\_\+journal} )(const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ad8a1c1ed7494c56d162ba470788f6330}\label{structsqlite3__api__routines_ad8a1c1ed7494c56d162ba470788f6330} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries filename\+\_\+wal} )(const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a7a85b89e90b0482481e04c3f03165eba}\label{structsqlite3__api__routines_a7a85b89e90b0482481e04c3f03165eba} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries create\+\_\+filename} )(const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, int, const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ac32e7203bd2312e36fee78f3f10751b2}\label{structsqlite3__api__routines_ac32e7203bd2312e36fee78f3f10751b2} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries free\+\_\+filename} )(const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ad64048cbd80b98d40e721e47439c42d3}\label{structsqlite3__api__routines_ad64048cbd80b98d40e721e47439c42d3} 
+\mbox{\hyperlink{structsqlite3__file}{sqlite3\+\_\+file}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries database\+\_\+file\+\_\+object} )(const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a23b1330ceeba33d96be4ecaae8de1d08}\label{structsqlite3__api__routines_a23b1330ceeba33d96be4ecaae8de1d08} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries txn\+\_\+state} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a3ddb9ac29d64b1872a76993962f0daf6}\label{structsqlite3__api__routines_a3ddb9ac29d64b1872a76993962f0daf6} 
+sqlite3\+\_\+int64(\texorpdfstring{$\ast$}{*} {\bfseries changes64} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ad5105b66aa91607f69dd9315c7eb4486}\label{structsqlite3__api__routines_ad5105b66aa91607f69dd9315c7eb4486} 
+sqlite3\+\_\+int64(\texorpdfstring{$\ast$}{*} {\bfseries total\+\_\+changes64} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_aba2063b4685a49a7b288af6c424262d2}\label{structsqlite3__api__routines_aba2063b4685a49a7b288af6c424262d2} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries autovacuum\+\_\+pages} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, unsigned int(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, unsigned int, unsigned int, unsigned int), void \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}))
+\item 
+\Hypertarget{structsqlite3__api__routines_a1c6807508fd329b0d5ac856e221cd893}\label{structsqlite3__api__routines_a1c6807508fd329b0d5ac856e221cd893} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries error\+\_\+offset} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_ab88da146b4c626673022aa3e8461a05f}\label{structsqlite3__api__routines_ab88da146b4c626673022aa3e8461a05f} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries vtab\+\_\+rhs\+\_\+value} )(\mbox{\hyperlink{structsqlite3__index__info}{sqlite3\+\_\+index\+\_\+info}} \texorpdfstring{$\ast$}{*}, int, \mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a1f176a4b42af71b43c3a50347ccdaa9c}\label{structsqlite3__api__routines_a1f176a4b42af71b43c3a50347ccdaa9c} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries vtab\+\_\+distinct} )(\mbox{\hyperlink{structsqlite3__index__info}{sqlite3\+\_\+index\+\_\+info}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a71824fe5e484c1c9f8b745bc177dc423}\label{structsqlite3__api__routines_a71824fe5e484c1c9f8b745bc177dc423} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries vtab\+\_\+in} )(\mbox{\hyperlink{structsqlite3__index__info}{sqlite3\+\_\+index\+\_\+info}} \texorpdfstring{$\ast$}{*}, int, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a14b97e6729aaea2baa709eb624f07b9f}\label{structsqlite3__api__routines_a14b97e6729aaea2baa709eb624f07b9f} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries vtab\+\_\+in\+\_\+first} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a36cb9f512c1b1ea0037c555063358547}\label{structsqlite3__api__routines_a36cb9f512c1b1ea0037c555063358547} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries vtab\+\_\+in\+\_\+next} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a19c1bc881d747ecc35b7b8fe9c164281}\label{structsqlite3__api__routines_a19c1bc881d747ecc35b7b8fe9c164281} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries deserialize} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, unsigned char \texorpdfstring{$\ast$}{*}, sqlite3\+\_\+int64, sqlite3\+\_\+int64, unsigned)
+\item 
+\Hypertarget{structsqlite3__api__routines_a1578076acdbb9362e6c2d59fff74fa38}\label{structsqlite3__api__routines_a1578076acdbb9362e6c2d59fff74fa38} 
+unsigned char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries serialize} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, sqlite3\+\_\+int64 \texorpdfstring{$\ast$}{*}, unsigned int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a47bbfbb2bdacf8ca64ffdf2cae657cca}\label{structsqlite3__api__routines_a47bbfbb2bdacf8ca64ffdf2cae657cca} 
+const char \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries db\+\_\+name} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_a26e27f014876f52b61e3ab4603b8659f}\label{structsqlite3__api__routines_a26e27f014876f52b61e3ab4603b8659f} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries value\+\_\+encoding} )(\mbox{\hyperlink{structsqlite3__value}{sqlite3\+\_\+value}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_aebdb1c3323359ce6c602e8f9a4d0dc6f}\label{structsqlite3__api__routines_aebdb1c3323359ce6c602e8f9a4d0dc6f} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries is\+\_\+interrupted} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a895dab397e23376de6e7ca246285b36e}\label{structsqlite3__api__routines_a895dab397e23376de6e7ca246285b36e} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries stmt\+\_\+explain} )(sqlite3\+\_\+stmt \texorpdfstring{$\ast$}{*}, int)
+\item 
+\Hypertarget{structsqlite3__api__routines_affd8faef25b79a728a7a700e8d57a754}\label{structsqlite3__api__routines_affd8faef25b79a728a7a700e8d57a754} 
+void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} {\bfseries get\+\_\+clientdata} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{structsqlite3__api__routines_a69bc286f09a2d1053d53e1aae733e872}\label{structsqlite3__api__routines_a69bc286f09a2d1053d53e1aae733e872} 
+int(\texorpdfstring{$\ast$}{*} {\bfseries set\+\_\+clientdata} )(\mbox{\hyperlink{structsqlite3}{sqlite3}} \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*}, void(\texorpdfstring{$\ast$}{*})(void \texorpdfstring{$\ast$}{*}))
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/sqlite3.\+c\end{DoxyCompactItemize}

@@ -1,0 +1,68 @@
+\doxysection{Pw\+Dialog Class Reference}
+\hypertarget{class_pw_dialog}{}\label{class_pw_dialog}\index{PwDialog@{PwDialog}}
+
+
+{\ttfamily \#include $<$pw\+\_\+dialog.\+h$>$}
+
+Inheritance diagram for Pw\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_pw_dialog}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pw_dialog_a90565e822263ffaff0d92ced52ac471d}{Pw\+Dialog}} (bool first\+\_\+run, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_pw_dialog_a1662c8a00da3482f8a6d7175b4c70fb5}{\texorpdfstring{$\sim$}{\string~}\+Pw\+Dialog}} ()
+\item 
+QString \mbox{\hyperlink{class_pw_dialog_a3e0a6deb46a0df3cc961a0b248e6c912}{get\+Password}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Диалоговое окно для ввода пароля. В зависимости от того, первый это вход или нет, устанавливает пароль либо совершает вход в приложение. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_pw_dialog_a90565e822263ffaff0d92ced52ac471d}\label{class_pw_dialog_a90565e822263ffaff0d92ced52ac471d} 
+\index{PwDialog@{PwDialog}!PwDialog@{PwDialog}}
+\index{PwDialog@{PwDialog}!PwDialog@{PwDialog}}
+\doxysubsubsection{\texorpdfstring{PwDialog()}{PwDialog()}}
+{\footnotesize\ttfamily Pw\+Dialog\+::\+Pw\+Dialog (\begin{DoxyParamCaption}\item[{bool}]{first\+\_\+run,  }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Конструктор диалога входа в приложение. Если вход не первый, текст диалога меняется на "{}Введите пароль"{}, иначе -\/ как в .ui файле.
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+\_\+run} & Первый/не первый запуск приложения. \\
+\hline
+{\em parent} & Родительский виджет. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_pw_dialog_a1662c8a00da3482f8a6d7175b4c70fb5}\label{class_pw_dialog_a1662c8a00da3482f8a6d7175b4c70fb5} 
+\index{PwDialog@{PwDialog}!````~PwDialog@{\texorpdfstring{$\sim$}{\string~}PwDialog}}
+\index{````~PwDialog@{\texorpdfstring{$\sim$}{\string~}PwDialog}!PwDialog@{PwDialog}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}PwDialog()}{\string~PwDialog()}}
+{\footnotesize\ttfamily Pw\+Dialog\+::\texorpdfstring{$\sim$}{\string~}\+Pw\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Деструктор диалога. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pw_dialog_a3e0a6deb46a0df3cc961a0b248e6c912}\label{class_pw_dialog_a3e0a6deb46a0df3cc961a0b248e6c912} 
+\index{PwDialog@{PwDialog}!getPassword@{getPassword}}
+\index{getPassword@{getPassword}!PwDialog@{PwDialog}}
+\doxysubsubsection{\texorpdfstring{getPassword()}{getPassword()}}
+{\footnotesize\ttfamily QString Pw\+Dialog\+::get\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Возвращает введенный пользователем пароль.
+
+\begin{DoxyReturn}{Returns}
+QString Пароль. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ui/pw\+\_\+dialog.\+h\item 
+src/pw\+\_\+dialog.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,72 @@
+\doxysection{Main\+Window Class Reference}
+\hypertarget{class_main_window}{}\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+{\ttfamily \#include $<$main\+\_\+window.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_a724422204a0748aeed64e636d9aa171c}{Main\+Window}} (\mbox{\hyperlink{class_database}{Database}} \texorpdfstring{$\ast$}{*}db, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+std\+::string \mbox{\hyperlink{class_main_window_a9d61537181fda1c166af8cfc79e26ea9}{gen\+Password}} (const int len, const bool digits, const bool punct)
+\item 
+\Hypertarget{class_main_window_a99645921ab7734ee3773b017493c081f}\label{class_main_window_a99645921ab7734ee3773b017493c081f} 
+\mbox{\hyperlink{class_table_model}{Table\+Model}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Table\+Model} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Главное окно нашей программы. Содержит инструменты для просмотра паролей, а также их генерации, добавления, редактирования, удаления и поиска. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_main_window_a724422204a0748aeed64e636d9aa171c}\label{class_main_window_a724422204a0748aeed64e636d9aa171c} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_database}{Database}} \texorpdfstring{$\ast$}{*}}]{db,  }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Конструктор главного окна приложения. Инициализирует пользовательский интерфейс, модель таблицы и БД. Устанавливает соединения кнопок интерфейса. Настраивает модель данных для таблицы и обновляет её из БД.
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & База данных. \\
+\hline
+{\em parent} & Родительский виджет. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_main_window_a9d61537181fda1c166af8cfc79e26ea9}\label{class_main_window_a9d61537181fda1c166af8cfc79e26ea9} 
+\index{MainWindow@{MainWindow}!genPassword@{genPassword}}
+\index{genPassword@{genPassword}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{genPassword()}{genPassword()}}
+{\footnotesize\ttfamily std\+::string Main\+Window\+::gen\+Password (\begin{DoxyParamCaption}\item[{const int}]{len,  }\item[{const bool}]{digits,  }\item[{const bool}]{punct }\end{DoxyParamCaption})}
+
+Генерирует случайный пароль данной длины. По желанию пользователя может включать или не включать цифры и спецсимволы.
+
+
+\begin{DoxyParams}{Parameters}
+{\em len} & Длина пароля. \\
+\hline
+{\em digits} & Включение цифр (да/нет). \\
+\hline
+{\em punct} & Включение цифр (да/нет). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string Пароль. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ui/main\+\_\+window.\+h\item 
+src/main\+\_\+window.\+cpp\end{DoxyCompactItemize}

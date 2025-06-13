@@ -1,0 +1,194 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						9,
+						10,
+						11
+					]
+				},
+				{
+					"build" : "_deps/doctest-build",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.doctest-build-Release-2f69cb55356210a082e9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/_deps/doctest-src",
+					"targetIndexes" : 
+					[
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "AIP_PROJECT",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						9,
+						10,
+						11
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "doctest",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "aip_project::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-aip_project-Release-3aa4ef2b759eb6b6bf8d.json",
+					"name" : "aip_project",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "aip_project_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-aip_project_autogen-Release-70a2e6e25815e2b970b4.json",
+					"name" : "aip_project_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "aip_project_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-aip_project_autogen_timestamp_deps-Release-be3ebad8b41ff9ee1d4b.json",
+					"name" : "aip_project_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "aip_tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-aip_tests-Release-60e2c65a30bedd2b5300.json",
+					"name" : "aip_tests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "aip_tests_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-aip_tests_autogen-Release-416a961141dfa4b0dc02.json",
+					"name" : "aip_tests_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "aip_tests_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-aip_tests_autogen_timestamp_deps-Release-930a66ac547fb322d05f.json",
+					"name" : "aip_tests_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "doctest_with_main::@de8c2d1415f8a28c2e63",
+					"jsonFile" : "target-doctest_with_main-Release-586ecf163194703fe6b3.json",
+					"name" : "doctest_with_main",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "doctest_with_main_autogen::@de8c2d1415f8a28c2e63",
+					"jsonFile" : "target-doctest_with_main_autogen-Release-4f176d0b61438a0b4ab5.json",
+					"name" : "doctest_with_main_autogen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "doctest_with_main_autogen_timestamp_deps::@de8c2d1415f8a28c2e63",
+					"jsonFile" : "target-doctest_with_main_autogen_timestamp_deps-Release-e3edfdae84a4ccc0a271.json",
+					"name" : "doctest_with_main_autogen_timestamp_deps",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sqlite3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sqlite3-Release-7faf5061b8a179fc09a2.json",
+					"name" : "sqlite3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sqlite3_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sqlite3_autogen-Release-6ba50933451f93443fb2.json",
+					"name" : "sqlite3_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sqlite3_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sqlite3_autogen_timestamp_deps-Release-bdd87ad4f135f878e707.json",
+					"name" : "sqlite3_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/admin/aip_project/build/Desktop_Qt_6_9_0_MinGW_64_bit-Release",
+		"source" : "C:/Users/admin/aip_project"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

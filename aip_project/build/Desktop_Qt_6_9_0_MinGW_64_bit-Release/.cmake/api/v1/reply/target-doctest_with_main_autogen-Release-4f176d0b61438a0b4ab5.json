@@ -1,0 +1,71 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/_deps/doctest-src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "doctest_with_main_autogen_timestamp_deps::@de8c2d1415f8a28c2e63"
+		}
+	],
+	"id" : "doctest_with_main_autogen::@de8c2d1415f8a28c2e63",
+	"isGeneratorProvided" : true,
+	"name" : "doctest_with_main_autogen",
+	"paths" : 
+	{
+		"build" : "_deps/doctest-build",
+		"source" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/_deps/doctest-src"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/_deps/doctest-build/CMakeFiles/doctest_with_main_autogen",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/_deps/doctest-build/CMakeFiles/doctest_with_main_autogen.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/_deps/doctest-build/doctest_with_main_autogen/timestamp.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

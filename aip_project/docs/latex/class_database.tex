@@ -1,0 +1,193 @@
+\doxysection{Database Class Reference}
+\hypertarget{class_database}{}\label{class_database}\index{Database@{Database}}
+
+
+{\ttfamily \#include $<$database.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_database_a60a40648eb37760f39516ca67f6d9738}{Database}} (const char \texorpdfstring{$\ast$}{*}filename)
+\item 
+\mbox{\hyperlink{class_database_a84d399a2ad58d69daab9b05330e1316d}{\texorpdfstring{$\sim$}{\string~}\+Database}} ()
+\item 
+\Hypertarget{class_database_a83f8b6d2941a4aee50f225e08e97291c}\label{class_database_a83f8b6d2941a4aee50f225e08e97291c} 
+{\bfseries Database} (const \mbox{\hyperlink{class_database}{Database}} \&)=delete
+\item 
+\Hypertarget{class_database_a46b93a4878076c7cfddd5b4058297f14}\label{class_database_a46b93a4878076c7cfddd5b4058297f14} 
+\mbox{\hyperlink{class_database}{Database}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_database}{Database}} \&)=delete
+\item 
+bool \mbox{\hyperlink{class_database_acf1998701b987be4f51f64a93a279cb4}{is\+First\+Run}} ()
+\item 
+bool \mbox{\hyperlink{class_database_af19e2a4ea9cd3c2bef5685fabff27b40}{set\+Master}} (const QString \&password)
+\item 
+bool \mbox{\hyperlink{class_database_afd460398c14533a779b63b82abb04aa4}{verify\+Master}} (const QString \&password)
+\item 
+std\+::string \mbox{\hyperlink{class_database_a830f3c4682fb0c3d01db2dd856d3fe3c}{get\+Master}} ()
+\item 
+bool \mbox{\hyperlink{class_database_a4af45821ed90ebb854afccad7b4c462b}{insert\+Data}} (const char \texorpdfstring{$\ast$}{*}site, const char \texorpdfstring{$\ast$}{*}pw, const char \texorpdfstring{$\ast$}{*}cat, const char \texorpdfstring{$\ast$}{*}cmt)
+\item 
+bool \mbox{\hyperlink{class_database_a6226536d301e0d45d92960c738484ae4}{delete\+Data}} (const char \texorpdfstring{$\ast$}{*}id)
+\item 
+bool \mbox{\hyperlink{class_database_a15bc7c6a7a1c7d5e0af1bb0fcbc9e4c4}{update\+Data}} (const char \texorpdfstring{$\ast$}{*}id, const char \texorpdfstring{$\ast$}{*}site, const char \texorpdfstring{$\ast$}{*}pw, const char \texorpdfstring{$\ast$}{*}cat, const char \texorpdfstring{$\ast$}{*}cmt)
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \mbox{\hyperlink{class_database_ac334f8789dc4d86c5123f7c05379dd29}{extract\+Data}} (const char \texorpdfstring{$\ast$}{*}search\+\_\+term, const char \texorpdfstring{$\ast$}{*}cat)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Наша база данных. Работает на sqlite3. Инициализуется с помощью пути к файлу. Также содержит методы обработки главного пароля и шифрования паролей в БД. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_database_a60a40648eb37760f39516ca67f6d9738}\label{class_database_a60a40648eb37760f39516ca67f6d9738} 
+\index{Database@{Database}!Database@{Database}}
+\index{Database@{Database}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{Database()}{Database()}}
+{\footnotesize\ttfamily Database\+::\+Database (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+Открытие БД. Если БД не открывается, падает с ошибкой. Иначе создает таблицу, если она уже не существует. Если по какой-\/то причине запрос создать таблицу не сработал, тоже выдает ошибку.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Путь к базе данных. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_database_a84d399a2ad58d69daab9b05330e1316d}\label{class_database_a84d399a2ad58d69daab9b05330e1316d} 
+\index{Database@{Database}!````~Database@{\texorpdfstring{$\sim$}{\string~}Database}}
+\index{````~Database@{\texorpdfstring{$\sim$}{\string~}Database}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Database()}{\string~Database()}}
+{\footnotesize\ttfamily Database\+::\texorpdfstring{$\sim$}{\string~}\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Закрытие БД. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_database_a6226536d301e0d45d92960c738484ae4}\label{class_database_a6226536d301e0d45d92960c738484ae4} 
+\index{Database@{Database}!deleteData@{deleteData}}
+\index{deleteData@{deleteData}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{deleteData()}{deleteData()}}
+{\footnotesize\ttfamily bool Database\+::delete\+Data (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{id }\end{DoxyParamCaption})}
+
+Удаление существующей записи в БД.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID нужной записи. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool true, если все прошло успешно, в противном случае false. 
+\end{DoxyReturn}
+\Hypertarget{class_database_ac334f8789dc4d86c5123f7c05379dd29}\label{class_database_ac334f8789dc4d86c5123f7c05379dd29} 
+\index{Database@{Database}!extractData@{extractData}}
+\index{extractData@{extractData}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{extractData()}{extractData()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ Database\+::extract\+Data (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{search\+\_\+term,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{cat }\end{DoxyParamCaption})}
+
+Получение записей из БД\+: либо по поисковому запросу, либо по категории. При извлечении пароль расшифровывается. Если оба параметра равны nullptr, просто выдает все записи. Иначе выдает записи, где сайт или комментарий содержит данный запрос, либо где категория равна данной.
+
+
+\begin{DoxyParams}{Parameters}
+{\em search\+\_\+term} & Поисковой запрос. \\
+\hline
+{\em cat} & Категория. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::vector$<$std\+::string$>$$>$ Соответствующие запросу записи. 
+\end{DoxyReturn}
+\Hypertarget{class_database_a830f3c4682fb0c3d01db2dd856d3fe3c}\label{class_database_a830f3c4682fb0c3d01db2dd856d3fe3c} 
+\index{Database@{Database}!getMaster@{getMaster}}
+\index{getMaster@{getMaster}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{getMaster()}{getMaster()}}
+{\footnotesize\ttfamily std\+::string Database\+::get\+Master (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Получает главный пароль из БД (для использования как ключ для шифрования остальных паролей).
+
+\begin{DoxyReturn}{Returns}
+std\+::string Пароль. 
+\end{DoxyReturn}
+\Hypertarget{class_database_a4af45821ed90ebb854afccad7b4c462b}\label{class_database_a4af45821ed90ebb854afccad7b4c462b} 
+\index{Database@{Database}!insertData@{insertData}}
+\index{insertData@{insertData}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{insertData()}{insertData()}}
+{\footnotesize\ttfamily bool Database\+::insert\+Data (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{site,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{pw,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{cat,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{cmt }\end{DoxyParamCaption})}
+
+Добавление записи в БД. При добавлении пароль шифруется.
+
+
+\begin{DoxyParams}{Parameters}
+{\em site} & Сайт. \\
+\hline
+{\em pw} & Пароль. \\
+\hline
+{\em cat} & Категория. \\
+\hline
+{\em cmt} & Комментарий. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool true, если все прошло успешно, в противном случае false. 
+\end{DoxyReturn}
+\Hypertarget{class_database_acf1998701b987be4f51f64a93a279cb4}\label{class_database_acf1998701b987be4f51f64a93a279cb4} 
+\index{Database@{Database}!isFirstRun@{isFirstRun}}
+\index{isFirstRun@{isFirstRun}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{isFirstRun()}{isFirstRun()}}
+{\footnotesize\ttfamily bool Database\+::is\+First\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Проверяет, существует ли таблица для главного пароля. Если существует и не пустая, то считается, что приложение запущено не впервые. Иначе -\/ впервые.
+
+\begin{DoxyReturn}{Returns}
+bool Первый/не первый запуск. 
+\end{DoxyReturn}
+\Hypertarget{class_database_af19e2a4ea9cd3c2bef5685fabff27b40}\label{class_database_af19e2a4ea9cd3c2bef5685fabff27b40} 
+\index{Database@{Database}!setMaster@{setMaster}}
+\index{setMaster@{setMaster}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{setMaster()}{setMaster()}}
+{\footnotesize\ttfamily bool Database\+::set\+Master (\begin{DoxyParamCaption}\item[{const QString \&}]{password }\end{DoxyParamCaption})}
+
+Задает главный пароль, хэширует и сохраняет его в БД.
+
+\begin{DoxyReturn}{Returns}
+bool Успех/не успех сохранения пароля. 
+\end{DoxyReturn}
+\Hypertarget{class_database_a15bc7c6a7a1c7d5e0af1bb0fcbc9e4c4}\label{class_database_a15bc7c6a7a1c7d5e0af1bb0fcbc9e4c4} 
+\index{Database@{Database}!updateData@{updateData}}
+\index{updateData@{updateData}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{updateData()}{updateData()}}
+{\footnotesize\ttfamily bool Database\+::update\+Data (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{id,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{site,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{pw,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{cat,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{cmt }\end{DoxyParamCaption})}
+
+Изменение существующей записи в БД. При изменении пароль также шифруется.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID нужной записи. \\
+\hline
+{\em site} & Сайт. \\
+\hline
+{\em pw} & Пароль. \\
+\hline
+{\em cat} & Категория. \\
+\hline
+{\em cmt} & Комментарий. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool true, если все прошло успешно, в противном случае false. 
+\end{DoxyReturn}
+\Hypertarget{class_database_afd460398c14533a779b63b82abb04aa4}\label{class_database_afd460398c14533a779b63b82abb04aa4} 
+\index{Database@{Database}!verifyMaster@{verifyMaster}}
+\index{verifyMaster@{verifyMaster}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{verifyMaster()}{verifyMaster()}}
+{\footnotesize\ttfamily bool Database\+::verify\+Master (\begin{DoxyParamCaption}\item[{const QString \&}]{password }\end{DoxyParamCaption})}
+
+Проверяет, соответствует ли введенный пароль сохраненному в БД.
+
+\begin{DoxyReturn}{Returns}
+bool Соответствие/несоответствие пароля. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/database/database.\+h\item 
+src/database.\+cpp\end{DoxyCompactItemize}

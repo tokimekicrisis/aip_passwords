@@ -1,0 +1,146 @@
+\doxysection{Table\+Model Class Reference}
+\hypertarget{class_table_model}{}\label{class_table_model}\index{TableModel@{TableModel}}
+
+
+{\ttfamily \#include $<$table\+\_\+model.\+h$>$}
+
+Inheritance diagram for Table\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_table_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_table_model_afebfa139e85b4e9739bfb37601e06284}{update\+From\+Database}} (\mbox{\hyperlink{class_database}{Database}} \texorpdfstring{$\ast$}{*}db, const char \texorpdfstring{$\ast$}{*}search\+\_\+term=nullptr, const char \texorpdfstring{$\ast$}{*}cat=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_table_model_a76647c50ae162a4f91daf4a9f76f6fb6}{Table\+Model}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+void \mbox{\hyperlink{class_table_model_afbd99e6aae8f3bed6ef182a3c1cfcdd0}{set\+Data}} (const std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \&new\+\_\+data)
+\item 
+int \mbox{\hyperlink{class_table_model_a057504b95575d90000085a068a7dd2db}{row\+Count}} (const QModel\+Index \&parent=QModel\+Index()) const override
+\item 
+int \mbox{\hyperlink{class_table_model_ae5e965832b4e91ce5e5f1507b0a80060}{column\+Count}} (const QModel\+Index \&parent=QModel\+Index()) const override
+\item 
+QVariant \mbox{\hyperlink{class_table_model_ae7ff98675b7d5f7405e5e2ed7fe81fc9}{data}} (const QModel\+Index \&index, int role) const override
+\item 
+QVariant \mbox{\hyperlink{class_table_model_acc300ae9cc6468e1be70794319146b12}{header\+Data}} (int section, Qt\+::\+Orientation orientation, int role) const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Модель таблицы для отображения паролей. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_table_model_a76647c50ae162a4f91daf4a9f76f6fb6}\label{class_table_model_a76647c50ae162a4f91daf4a9f76f6fb6} 
+\index{TableModel@{TableModel}!TableModel@{TableModel}}
+\index{TableModel@{TableModel}!TableModel@{TableModel}}
+\doxysubsubsection{\texorpdfstring{TableModel()}{TableModel()}}
+{\footnotesize\ttfamily Table\+Model\+::\+Table\+Model (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Конструктор модели таблицы. 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Родительский виджет. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_table_model_ae5e965832b4e91ce5e5f1507b0a80060}\label{class_table_model_ae5e965832b4e91ce5e5f1507b0a80060} 
+\index{TableModel@{TableModel}!columnCount@{columnCount}}
+\index{columnCount@{columnCount}!TableModel@{TableModel}}
+\doxysubsubsection{\texorpdfstring{columnCount()}{columnCount()}}
+{\footnotesize\ttfamily int Table\+Model\+::column\+Count (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+Подсчет количества столбцов в таблице. 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Родитель. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Количество столбцов. 
+\end{DoxyReturn}
+\Hypertarget{class_table_model_ae7ff98675b7d5f7405e5e2ed7fe81fc9}\label{class_table_model_ae7ff98675b7d5f7405e5e2ed7fe81fc9} 
+\index{TableModel@{TableModel}!data@{data}}
+\index{data@{data}!TableModel@{TableModel}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily QVariant Table\+Model\+::data (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{index,  }\item[{int}]{role }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+Отображение данных в таблице. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Индекс. \\
+\hline
+{\em role} & Роль (атрибут ячейки\+: текст, цвет и т. д.). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QVariant Данные этой ячейки. 
+\end{DoxyReturn}
+\Hypertarget{class_table_model_acc300ae9cc6468e1be70794319146b12}\label{class_table_model_acc300ae9cc6468e1be70794319146b12} 
+\index{TableModel@{TableModel}!headerData@{headerData}}
+\index{headerData@{headerData}!TableModel@{TableModel}}
+\doxysubsubsection{\texorpdfstring{headerData()}{headerData()}}
+{\footnotesize\ttfamily QVariant Table\+Model\+::header\+Data (\begin{DoxyParamCaption}\item[{int}]{section,  }\item[{Qt\+::\+Orientation}]{orientation,  }\item[{int}]{role }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+Установка названий столбцов в таблице. Названия строк задаются как номера строк.
+
+
+\begin{DoxyParams}{Parameters}
+{\em section} & Номер столбца. \\
+\hline
+{\em orientation} & Ориентация (строка либо столбец). \\
+\hline
+{\em role} & Роль (элемент для отображения или нет). return QString Название столбца/строки. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_table_model_a057504b95575d90000085a068a7dd2db}\label{class_table_model_a057504b95575d90000085a068a7dd2db} 
+\index{TableModel@{TableModel}!rowCount@{rowCount}}
+\index{rowCount@{rowCount}!TableModel@{TableModel}}
+\doxysubsubsection{\texorpdfstring{rowCount()}{rowCount()}}
+{\footnotesize\ttfamily int Table\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+Подсчет количества строк в таблице. 
+\begin{DoxyParams}{Parameters}
+{\em parent} & Родитель. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Количество строк. 
+\end{DoxyReturn}
+\Hypertarget{class_table_model_afbd99e6aae8f3bed6ef182a3c1cfcdd0}\label{class_table_model_afbd99e6aae8f3bed6ef182a3c1cfcdd0} 
+\index{TableModel@{TableModel}!setData@{setData}}
+\index{setData@{setData}!TableModel@{TableModel}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily void Table\+Model\+::set\+Data (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \&}]{new\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Ввод новых данных в таблицу. 
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+data} & Новые данные. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_table_model_afebfa139e85b4e9739bfb37601e06284}\label{class_table_model_afebfa139e85b4e9739bfb37601e06284} 
+\index{TableModel@{TableModel}!updateFromDatabase@{updateFromDatabase}}
+\index{updateFromDatabase@{updateFromDatabase}!TableModel@{TableModel}}
+\doxysubsubsection{\texorpdfstring{updateFromDatabase}{updateFromDatabase}}
+{\footnotesize\ttfamily void Table\+Model\+::update\+From\+Database (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_database}{Database}} \texorpdfstring{$\ast$}{*}}]{db,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{search\+\_\+term = {\ttfamily nullptr},  }\item[{const char \texorpdfstring{$\ast$}{*}}]{cat = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+Загрузка новых данных из БД в таблицу.
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & База данных. \\
+\hline
+{\em search\+\_\+term} & Поисковой запрос. \\
+\hline
+{\em cat} & Категория сортировки. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ui/table\+\_\+model.\+h\end{DoxyCompactItemize}

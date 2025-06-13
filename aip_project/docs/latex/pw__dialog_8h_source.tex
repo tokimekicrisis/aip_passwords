@@ -1,0 +1,32 @@
+\doxysection{pw\+\_\+dialog.\+h}
+\hypertarget{pw__dialog_8h_source}{}\label{pw__dialog_8h_source}\index{include/ui/pw\_dialog.h@{include/ui/pw\_dialog.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PW\_DIALOG\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PW\_DIALOG\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ui\_pw\_dialog.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pw_dialog}{PwDialog}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \mbox{\hyperlink{class_pw_dialog}{PwDialog}}(\textcolor{keywordtype}{bool}\ first\_run,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00019\ \ \ \mbox{\hyperlink{class_pw_dialog_a1662c8a00da3482f8a6d7175b4c70fb5}{\string~PwDialog}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ QString\ \mbox{\hyperlink{class_pw_dialog_a3e0a6deb46a0df3cc961a0b248e6c912}{getPassword}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{void}\ onSetPwClicked();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ Ui::PwDialog\ *ui;}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{bool}\ first\_run;}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PW\_DIALOG\_H}}
+
+\end{DoxyCode}

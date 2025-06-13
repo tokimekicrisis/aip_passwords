@@ -1,0 +1,48 @@
+\doxysection{database.\+h}
+\hypertarget{database_8h_source}{}\label{database_8h_source}\index{include/database/database.h@{include/database/database.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DATABASE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DATABASE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <sqlite3.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_database}{Database}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \mbox{\hyperlink{class_database}{Database}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename);}
+\DoxyCodeLine{00020\ \ \ \mbox{\hyperlink{class_database_a84d399a2ad58d69daab9b05330e1316d}{\string~Database}}();}
+\DoxyCodeLine{00021\ \ \ }
+\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{class_database}{Database}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_database}{Database}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00023\ \ \ \mbox{\hyperlink{class_database}{Database}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_database}{Database}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_acf1998701b987be4f51f64a93a279cb4}{isFirstRun}}();}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_af19e2a4ea9cd3c2bef5685fabff27b40}{setMaster}}(\textcolor{keyword}{const}\ QString\&\ password);}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_afd460398c14533a779b63b82abb04aa4}{verifyMaster}}(\textcolor{keyword}{const}\ QString\&\ password);}
+\DoxyCodeLine{00028\ \ \ std::string\ \mbox{\hyperlink{class_database_a830f3c4682fb0c3d01db2dd856d3fe3c}{getMaster}}();}
+\DoxyCodeLine{00029\ \ \ }
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_a4af45821ed90ebb854afccad7b4c462b}{insertData}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ site,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ pw,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ cat,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ cmt);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_a6226536d301e0d45d92960c738484ae4}{deleteData}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_a15bc7c6a7a1c7d5e0af1bb0fcbc9e4c4}{updateData}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{id},}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ site,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ pw,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ cat,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ cmt);}
+\DoxyCodeLine{00038\ \ \ }
+\DoxyCodeLine{00039\ \ \ std::vector<std::vector<std::string>>\ \mbox{\hyperlink{class_database_ac334f8789dc4d86c5123f7c05379dd29}{extractData}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ search\_term,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ cat);}
+\DoxyCodeLine{00041\ \ \ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ sqlite3*\ db\_;}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{bool}\ createMaster();}
+\DoxyCodeLine{00045\ \ \ std::string\ xorEncrypt(\textcolor{keyword}{const}\ std::string\&\ input);}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATABASE\_H}}
+
+\end{DoxyCode}

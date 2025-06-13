@@ -1,0 +1,27 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/_deps/doctest-src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"id" : "doctest_with_main_autogen_timestamp_deps::@de8c2d1415f8a28c2e63",
+	"isGeneratorProvided" : true,
+	"name" : "doctest_with_main_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "_deps/doctest-build",
+		"source" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Release/_deps/doctest-src"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}
